@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg-uro" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8eef6"/>
+      <stop offset="1" stop-color="#e0f4fa"/>
+    </linearGradient>
+    <linearGradient id="grad-uro-1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a3a6b"/>
+      <stop offset="1" stop-color="#0f2548"/>
+    </linearGradient>
+    <linearGradient id="grad-uro-2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0099cc"/>
+      <stop offset="1" stop-color="#1a3a6b"/>
+    </linearGradient>
+    <radialGradient id="glow-uro" cx="50%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg-uro)"/>
+  <circle cx="400" cy="250" r="240" fill="url(#glow-uro)"/>
+
+  <!-- Two stylized kidneys -->
+  <g transform="translate(400 250)">
+    <!-- Left kidney -->
+    <g transform="translate(-90 0)">
+      <path d="M -10 -100 C -70 -90 -90 -30 -70 30 C -55 75 -10 90 25 75 C 50 60 60 30 50 -20 C 40 -75 10 -110 -10 -100 Z"
+            fill="url(#grad-uro-1)" opacity="0.92"/>
+      <path d="M -25 -10 C -10 -30 20 -25 35 -5"
+            fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.1"/>
+    </g>
+    <!-- Right kidney (mirrored) -->
+    <g transform="translate(90 0) scale(-1 1)">
+      <path d="M -10 -100 C -70 -90 -90 -30 -70 30 C -55 75 -10 90 25 75 C 50 60 60 30 50 -20 C 40 -75 10 -110 -10 -100 Z"
+            fill="url(#grad-uro-2)" opacity="0.92"/>
+      <path d="M -25 -10 C -10 -30 20 -25 35 -5"
+            fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="20" fill="#ffffff" opacity="0.1"/>
+    </g>
+  </g>
+
+  <!-- Connecting ureters and bladder -->
+  <g transform="translate(400 360)">
+    <!-- Ureters -->
+    <path d="M -90 -100 Q -50 -50 0 0" fill="none" stroke="url(#grad-uro-2)" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 90 -100 Q 50 -50 0 0" fill="none" stroke="url(#grad-uro-2)" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+    <!-- Bladder -->
+    <ellipse cx="0" cy="20" rx="50" ry="35" fill="url(#grad-uro-1)" opacity="0.85"/>
+    <ellipse cx="0" cy="20" rx="50" ry="35" fill="none" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"/>
+  </g>
+
+  <!-- Particle accents -->
+  <g fill="#1a3a6b" opacity="0.35">
+    <circle cx="120" cy="100" r="4"/>
+    <circle cx="700" cy="120" r="5"/>
+    <circle cx="660" cy="420" r="3"/>
+    <circle cx="80" cy="380" r="4"/>
+  </g>
+  <g fill="#0099cc" opacity="0.4">
+    <circle cx="730" cy="280" r="3"/>
+    <circle cx="100" cy="200" r="3"/>
+    <circle cx="380" cy="60" r="4"/>
+    <circle cx="500" cy="80" r="3"/>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8eef6"/>
+      <stop offset="1" stop-color="#f3e8f7"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d5b5"/>
+      <stop offset="1" stop-color="#e6b88a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="170" r="300" fill="#1a3a6b" opacity="0.04"/>
+  <!-- Shoulders / coat -->
+  <path d="M60 400 C60 300 120 260 200 260 C280 260 340 300 340 400 Z" fill="url(#coat)" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- Stethoscope -->
+  <path d="M150 280 Q150 340 200 340 Q250 340 250 280" fill="none" stroke="#1a3a6b" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="200" cy="352" r="10" fill="#1a3a6b"/>
+  <circle cx="200" cy="352" r="5" fill="#c9a84c"/>
+  <!-- Collar V -->
+  <path d="M170 260 L200 310 L230 260 Z" fill="#1a3a6b"/>
+  <!-- Neck -->
+  <rect x="180" y="215" width="40" height="50" rx="8" fill="url(#skin)"/>
+  <!-- Head -->
+  <circle cx="200" cy="170" r="65" fill="url(#skin)"/>
+  <!-- Hair -->
+  <path d="M135 160 Q135 95 200 95 Q265 95 265 160 Q265 135 250 125 Q235 115 200 115 Q165 115 150 125 Q135 135 135 160 Z" fill="#2d2a26"/>
+  <!-- Eyes -->
+  <circle cx="180" cy="170" r="3" fill="#1e293b"/>
+  <circle cx="220" cy="170" r="3" fill="#1e293b"/>
+  <!-- Smile -->
+  <path d="M180 195 Q200 210 220 195" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Medical cross badge -->
+  <circle cx="285" cy="305" r="18" fill="#7b2d8e"/>
+  <rect x="281" y="294" width="8" height="22" rx="1" fill="#ffffff"/>
+  <rect x="274" y="301" width="22" height="8" rx="1" fill="#ffffff"/>
+</svg>

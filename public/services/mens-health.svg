@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg-mh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e0f4fa"/>
+      <stop offset="1" stop-color="#faf5e8"/>
+    </linearGradient>
+    <linearGradient id="grad-mh-1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0099cc"/>
+      <stop offset="1" stop-color="#1a3a6b"/>
+    </linearGradient>
+    <linearGradient id="grad-mh-2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9a84c"/>
+      <stop offset="1" stop-color="#7b2d8e"/>
+    </linearGradient>
+    <radialGradient id="glow-mh" cx="50%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg-mh)"/>
+  <circle cx="400" cy="250" r="240" fill="url(#glow-mh)"/>
+
+  <!-- Heart with pulse -->
+  <g transform="translate(400 230)">
+    <path d="M 0 60 C -120 -20 -120 -100 -60 -100 C -25 -100 0 -70 0 -50 C 0 -70 25 -100 60 -100 C 120 -100 120 -20 0 60 Z"
+          fill="url(#grad-mh-2)" opacity="0.92"/>
+    <!-- Heart highlight -->
+    <ellipse cx="-30" cy="-50" rx="15" ry="20" fill="#ffffff" opacity="0.3"/>
+
+    <!-- ECG pulse line through heart -->
+    <polyline points="-180,0 -110,0 -90,-30 -70,30 -50,-50 -30,40 -10,0 10,0 30,-25 50,25 70,0 180,0"
+              fill="none" stroke="url(#grad-mh-1)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Stethoscope on left -->
+  <g transform="translate(140 280)" opacity="0.7">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="url(#grad-mh-1)" stroke-width="6"/>
+    <circle cx="0" cy="0" r="18" fill="url(#grad-mh-1)" opacity="0.5"/>
+    <path d="M -25 -25 Q -50 -80 -10 -120" fill="none" stroke="url(#grad-mh-1)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 25 -25 Q 50 -80 10 -120" fill="none" stroke="url(#grad-mh-1)" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-10" cy="-120" r="6" fill="url(#grad-mh-1)"/>
+    <circle cx="10" cy="-120" r="6" fill="url(#grad-mh-1)"/>
+  </g>
+
+  <!-- Lifestyle icons on right (lotus) -->
+  <g transform="translate(640 280)" opacity="0.7">
+    <ellipse cx="0" cy="0" rx="20" ry="55" fill="url(#grad-mh-2)" opacity="0.8"/>
+    <ellipse cx="0" cy="0" rx="55" ry="20" fill="url(#grad-mh-2)" opacity="0.6"/>
+    <ellipse cx="0" cy="0" rx="40" ry="40" fill="url(#grad-mh-2)" opacity="0.4" transform="rotate(45)"/>
+    <circle cx="0" cy="0" r="12" fill="#ffffff" opacity="0.7"/>
+  </g>
+
+  <!-- Particle accents -->
+  <g fill="#0099cc" opacity="0.35">
+    <circle cx="120" cy="100" r="4"/>
+    <circle cx="700" cy="120" r="5"/>
+    <circle cx="660" cy="420" r="3"/>
+    <circle cx="80" cy="380" r="4"/>
+  </g>
+  <g fill="#c9a84c" opacity="0.5">
+    <circle cx="730" cy="180" r="3"/>
+    <circle cx="100" cy="200" r="3"/>
+    <circle cx="380" cy="60" r="4"/>
+    <circle cx="280" cy="430" r="3"/>
+  </g>
+</svg>
