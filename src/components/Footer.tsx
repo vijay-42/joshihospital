@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-bg-dark text-gray-300">
+    <footer className="bg-gradient-to-r from-primary to-secondary text-gray-200">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-xs italic text-gold mb-2">Integrated Andrology &amp; Urology Services</p>
-            <p className="text-sm text-gray-400 leading-relaxed mb-5">
+            <p className="text-sm text-white/85 leading-relaxed mb-5">
               Comprehensive urological and andrological care with over 10,000+
               patients treated and 4,000+ successful surgeries since 2018.
             </p>
@@ -32,7 +32,7 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-xs font-bold text-gold leading-none">NABH Certified</div>
-                <div className="text-[10px] text-gray-400 mt-0.5">Patient Safety &amp; Quality</div>
+                <div className="text-[10px] text-white/85 mt-0.5">Patient Safety &amp; Quality</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -40,7 +40,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/joshiuroandrology/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#0a66c2] flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#0a66c2] flex items-center justify-center text-white/85 hover:text-white transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ export default function Footer() {
                 href="https://www.instagram.com/joshis_andrology_and_urology/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-gradient-to-tr hover:from-[#fdc468] hover:via-[#df4996] hover:to-[#7048e8] flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-gradient-to-tr hover:from-[#fdc468] hover:via-[#df4996] hover:to-[#7048e8] flex items-center justify-center text-white/85 hover:text-white transition-all duration-300"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@ export default function Footer() {
                 href="https://www.facebook.com/DrJoshi55"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#1877f2] flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#1877f2] flex items-center justify-center text-white/85 hover:text-white transition-all duration-300"
                 aria-label="Facebook"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -73,7 +73,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@joshisteam3349"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff0000] flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff0000] flex items-center justify-center text-white/85 hover:text-white transition-all duration-300"
                 aria-label="YouTube"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -97,9 +97,9 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-gold transition-colors flex items-center gap-2 group"
+                    className="text-sm text-white/85 hover:text-gold transition-colors flex items-center gap-2 group"
                   >
-                    <svg className="w-3 h-3 text-gray-600 group-hover:text-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 text-white/50 group-hover:text-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                     {link.label}
@@ -124,9 +124,9 @@ export default function Footer() {
                 <li key={service}>
                   <Link
                     href="/services"
-                    className="text-sm text-gray-400 hover:text-gold transition-colors flex items-center gap-2 group"
+                    className="text-sm text-white/85 hover:text-gold transition-colors flex items-center gap-2 group"
                   >
-                    <svg className="w-3 h-3 text-gray-600 group-hover:text-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 text-white/50 group-hover:text-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                     {service}
@@ -147,7 +147,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span className="text-sm text-gray-400 leading-relaxed">
+                <span className="text-sm text-white/85 leading-relaxed">
                   No. 776, Sri Krishna Complex, 1st &amp; 2nd Floor, Opp. Ganesha Temple, Sahakaranagar &lsquo;A&rsquo; Block, Bengaluru &mdash; 560 092
                 </span>
               </li>
@@ -157,7 +157,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <div className="text-sm text-gray-400">
+                <div className="text-sm text-white/85">
                   <a href="tel:08042070577" className="hover:text-gold block transition-colors">080-42070577</a>
                   <a href="tel:+918197371247" className="hover:text-gold block transition-colors">+91 81973 71247</a>
                 </div>
@@ -168,7 +168,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <a href="mailto:joshi.andrology@gmail.com" className="text-sm text-gray-400 hover:text-gold transition-colors">
+                <a href="mailto:joshi.andrology@gmail.com" className="text-sm text-white/85 hover:text-gold transition-colors">
                   joshi.andrology@gmail.com
                 </a>
               </li>
@@ -178,7 +178,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="text-sm text-gray-400">Mon - Sat: 9:30 AM - 8:00 PM</span>
+                <span className="text-sm text-white/85">Mon - Sat: 9:30 AM - 8:00 PM</span>
               </li>
             </ul>
           </div>
@@ -188,10 +188,10 @@ export default function Footer() {
       {/* Bottom */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-white/70">
             &copy; {new Date().getFullYear()} Joshi&apos;s Andrology &amp; Urology Centre. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-gray-500">
+          <div className="flex items-center gap-6 text-sm text-white/70">
             <span>Privacy Policy</span>
             <span>Disclaimer</span>
             <span>Sitemap</span>
