@@ -13,8 +13,8 @@ const services = [
     title: "Andrology",
     description: "Comprehensive male reproductive and sexual health care including infertility evaluation, hormonal assessment, and advanced treatments.",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-7 h-7">
-        {/* DNA double helix */}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-7 h-7 icon-spin-helix">
+        {/* DNA double helix — slow rotation */}
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 3c0 4 10 6 10 10s-10 4-10 8" />
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 3c0 4-10 6-10 10s10 4 10 8" />
         <path strokeLinecap="round" strokeWidth={1.5} d="M8.5 6h7M8.5 9h7M8.5 15h7M8.5 18h7" />
@@ -28,10 +28,16 @@ const services = [
     description: "Expert diagnosis and treatment for kidney stones, urinary tract infections, obstruction, incontinence, and urological cancers.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-7 h-7">
-        {/* Kidney shape */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 5c-3 0-5 3-5 7s2 7 5 7c2 0 3-1 4-2.5C13 18 14 19 16 19c3 0 5-3 5-7s-2-7-5-7c-2 0-3 1-4 2.5C11 6 10 5 8 5z" />
-        <circle cx="9" cy="12" r="1" fill="currentColor" />
-        <circle cx="15" cy="12" r="1" fill="currentColor" />
+        {/* Kidneys — gentle pulse on the organ shape */}
+        <path
+          className="icon-pulse"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M8 5c-3 0-5 3-5 7s2 7 5 7c2 0 3-1 4-2.5C13 18 14 19 16 19c3 0 5-3 5-7s-2-7-5-7c-2 0-3 1-4 2.5C11 6 10 5 8 5z"
+        />
+        <circle cx="9" cy="12" r="1" fill="currentColor" className="icon-twinkle" />
+        <circle cx="15" cy="12" r="1" fill="currentColor" className="icon-twinkle" style={{ animationDelay: "0.6s" }} />
       </svg>
     ),
     href: "/services/kidney-stone-treatment-in-bangalore",
@@ -42,9 +48,15 @@ const services = [
     description: "Complete male fertility care: semen analysis, hormonal evaluation, surgical sperm retrieval, varicocele, and vasectomy reversal.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-7 h-7">
-        {/* Male symbol */}
+        {/* Male symbol — arrow bobs up-right */}
         <circle cx="10" cy="14" r="5" strokeWidth={1.5} />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 10l6-6m0 0h-4m4 0v4" />
+        <path
+          className="icon-bounce-up"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M14 10l6-6m0 0h-4m4 0v4"
+        />
       </svg>
     ),
     href: "/services/male-infertility-treatment-in-bangalore",
@@ -55,8 +67,14 @@ const services = [
     description: "Evidence-based ED treatment including medications, shockwave therapy (EDSWT), penile prosthesis implantation, and counseling.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-7 h-7">
-        {/* Lightning bolt with pulse */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 2L3 14h8l-1 8 11-14h-8l1-6z" />
+        {/* Lightning bolt — flashes/glows */}
+        <path
+          className="icon-flash"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M13 2L3 14h8l-1 8 11-14h-8l1-6z"
+        />
         <path strokeLinecap="round" strokeWidth={1.5} d="M19 19l2 2M5 5L3 3" opacity="0.4" />
       </svg>
     ),
@@ -68,11 +86,13 @@ const services = [
     description: "Minimally invasive stone removal, lithotripsy, PCNL, and preventive management for all types of urinary calculi.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-7 h-7">
-        {/* Stone clusters */}
-        <ellipse cx="9" cy="11" rx="4" ry="3.5" strokeWidth={1.5} />
-        <ellipse cx="16" cy="15" rx="3" ry="2.5" strokeWidth={1.5} />
-        <circle cx="14" cy="8" r="1.5" strokeWidth={1.5} />
-        <path strokeLinecap="round" strokeWidth={1} d="M7 10l1 1M10 12l1 0.5M15 14l1 0.5" opacity="0.5" />
+        {/* Stones — wobble */}
+        <g className="icon-wobble">
+          <ellipse cx="9" cy="11" rx="4" ry="3.5" strokeWidth={1.5} />
+          <ellipse cx="16" cy="15" rx="3" ry="2.5" strokeWidth={1.5} />
+          <circle cx="14" cy="8" r="1.5" strokeWidth={1.5} />
+        </g>
+        <path strokeLinecap="round" strokeWidth={1} d="M7 10l1 1M10 12l1 0.5M15 14l1 0.5" opacity="0.5" className="icon-twinkle" />
       </svg>
     ),
     href: "/services/kidney-stone-treatment-in-bangalore",
@@ -83,8 +103,14 @@ const services = [
     description: "Holistic men's wellness including low testosterone management, prostate health, preventive cardiology, and yoga & wellness.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-7 h-7">
-        {/* Heart with pulse line */}
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+        {/* Heart — beats; pulse line stays steady */}
+        <path
+          className="icon-heartbeat"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+        />
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 12h2l1-2 2 4 1-2h4" />
       </svg>
     ),

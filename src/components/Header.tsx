@@ -265,8 +265,8 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right actions — Book Appointment + Mobile menu */}
-          <div className="flex items-center gap-2 justify-self-end">
+          {/* Right actions — Book Appointment + Image + Mobile menu */}
+          <div className="flex items-center gap-3 justify-self-end">
             <button
               type="button"
               onClick={() => setBookingOpen(true)}
@@ -274,6 +274,13 @@ export default function Header() {
             >
               Book Appointment
             </button>
+            <Image
+              src="/nav-image.jpg"
+              alt=""
+              width={64}
+              height={44}
+              className="hidden md:block h-11 w-auto rounded-lg object-cover shadow-sm"
+            />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 text-text-light hover:text-primary transition-colors"

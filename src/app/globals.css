@@ -92,6 +92,45 @@ body {
 .animate-spin-slow { animation: spin-slow 20s linear infinite; }
 .animate-spin-reverse { animation: spin-reverse 14s linear infinite; }
 
+/* Service icon micro-animations (looped, subtle) */
+@keyframes icon-heartbeat {
+  0%, 55%, 100% { transform: scale(1); }
+  20% { transform: scale(1.18); }
+  35% { transform: scale(0.97); }
+}
+@keyframes icon-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes icon-wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(-7deg); }
+  75%      { transform: rotate(7deg); }
+}
+@keyframes icon-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.08); opacity: 0.85; }
+}
+@keyframes icon-flash {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 0 transparent); }
+  50%      { opacity: 0.9; filter: drop-shadow(0 0 4px currentColor); }
+}
+@keyframes icon-bounce-up {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(2px, -3px); }
+}
+@keyframes icon-twinkle {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 1; }
+}
+
+.icon-heartbeat   { animation: icon-heartbeat 1.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.icon-spin-helix  { animation: icon-spin 14s linear infinite;            transform-origin: center; transform-box: fill-box; }
+.icon-wobble      { animation: icon-wobble 4s ease-in-out infinite;      transform-origin: center; transform-box: fill-box; }
+.icon-pulse       { animation: icon-pulse 2.5s ease-in-out infinite;     transform-origin: center; transform-box: fill-box; }
+.icon-flash       { animation: icon-flash 1.6s ease-in-out infinite;     transform-origin: center; transform-box: fill-box; }
+.icon-bounce-up   { animation: icon-bounce-up 1.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.icon-twinkle     { animation: icon-twinkle 1.6s ease-in-out infinite;   transform-origin: center; transform-box: fill-box; }
+
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out both;
 }
