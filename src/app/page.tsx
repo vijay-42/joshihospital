@@ -742,8 +742,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-6">
             {[
               { slug: "dr-praveen-joshi", name: "Dr. Praveen Joshi", title: "Founder, Urology & Andrology", img: "/dr-praveen-joshi.webp", grad: "from-primary to-primary-dark" },
-              { slug: "dr-meera-rao", name: "Dr. Meera Rao", title: "Fertility & IVF", img: "/doctor.svg", grad: "from-accent to-primary" },
-              { slug: "dr-kanusha", name: "Dr. Kanusha", title: "Clinical Psychology", img: "/doctor.svg", grad: "from-gold to-secondary" },
+              { slug: "dr-sai-dilip-sriramula", name: "Dr. Sai Dilip Sriramula", title: "Consultant Urologist", img: "/doctor.svg", grad: "from-accent to-primary" },
+              { slug: "dr-bharathi-rajanna", name: "Dr. Bharathi Rajanna", title: "OBS, Gynaec & Fertility", img: "/doctor.svg", grad: "from-gold to-secondary" },
             ].map((d) => (
               <Link key={d.slug} href={`/doctors/${d.slug}`} className="group block">
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 group-hover:shadow-2xl group-hover:-translate-y-1 transition-all duration-300">

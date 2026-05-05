@@ -92,9 +92,35 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
   const otherCategories = serviceCategories.filter((c) => c.name !== category);
   const heroImage = getCategoryImage(category);
 
+  // Andrology has a complete pre-designed banner image — render it at full natural aspect with no overlays
+  const useFullBanner = category === "Andrology";
+
   return (
     <>
-      {/* Hero — full-bleed banner image */}
+      {useFullBanner ? (
+        /* Full-bleed banner image — edge-to-edge, no padding */
+        <section className="relative bg-white">
+          <Link
+            href="/services"
+            className="absolute top-4 left-4 z-20 inline-flex items-center gap-2 text-sm bg-white/90 backdrop-blur text-text hover:text-primary px-3 py-1.5 rounded-full shadow-md transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+            All Services
+          </Link>
+          <Image
+            src={heroImage}
+            alt={`${category} banner`}
+            width={1672}
+            height={941}
+            sizes="100vw"
+            priority
+            className="block w-full h-auto"
+          />
+        </section>
+      ) : (
+      /* Hero — full-bleed banner image */
       <section className="relative min-h-[360px] lg:min-h-[420px] flex items-center overflow-hidden bg-primary-dark">
         {/* Background image */}
         <Image
@@ -175,6 +201,7 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
         </div>
 
       </section>
+      )}
 
       {/* Intro / About */}
       <section className="py-16 lg:py-20">
