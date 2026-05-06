@@ -81,7 +81,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
         </Link>
 
         {/* Content overlay */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24 grid lg:grid-cols-12 gap-8 items-center">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12 lg:py-14 grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7">
             <div
               className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-5 border ${
