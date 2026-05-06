@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 941" width="1672" height="941">
+  <defs>
+    <linearGradient id="ubg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f8fc"/>
+      <stop offset="1" stop-color="#e0f0fa"/>
+    </linearGradient>
+    <linearGradient id="ut1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1a3a6b"/>
+      <stop offset="1" stop-color="#0f2548"/>
+    </linearGradient>
+    <linearGradient id="ut2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0099cc"/>
+      <stop offset="1" stop-color="#1a3a6b"/>
+    </linearGradient>
+    <linearGradient id="upill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1a3a6b"/>
+      <stop offset="1" stop-color="#0099cc"/>
+    </linearGradient>
+    <radialGradient id="uorgan" cx="50%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#0099cc" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#1a3a6b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="uwave" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0099cc"/>
+      <stop offset="1" stop-color="#1a3a6b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1672" height="941" fill="url(#ubg)"/>
+
+  <!-- Decorative dots top right -->
+  <g fill="#0099cc" opacity="0.35">
+    <circle cx="1480" cy="80" r="6"/><circle cx="1530" cy="120" r="4"/><circle cx="1580" cy="80" r="5"/>
+    <circle cx="1450" cy="140" r="4"/><circle cx="1620" cy="150" r="5"/><circle cx="1500" cy="200" r="4"/>
+    <circle cx="1560" cy="180" r="3"/><circle cx="1610" cy="220" r="4"/>
+  </g>
+
+  <!-- Plus marks -->
+  <g stroke="#1a3a6b" stroke-width="6" opacity="0.4" stroke-linecap="round">
+    <line x1="900" y1="170" x2="900" y2="210"/><line x1="880" y1="190" x2="920" y2="190"/>
+    <line x1="1130" y1="60" x2="1130" y2="100"/><line x1="1110" y1="80" x2="1150" y2="80"/>
+    <line x1="800" y1="730" x2="800" y2="770"/><line x1="780" y1="750" x2="820" y2="750"/>
+  </g>
+
+  <!-- Title -->
+  <text x="100" y="280" font-family="system-ui, -apple-system, Helvetica, sans-serif" font-weight="800" font-size="140" fill="url(#ut1)">Urology</text>
+  <text x="100" y="430" font-family="system-ui, -apple-system, Helvetica, sans-serif" font-weight="800" font-size="140" fill="url(#ut2)">Treatment</text>
+
+  <!-- Divider -->
+  <line x1="100" y1="475" x2="380" y2="475" stroke="#1a3a6b" stroke-width="3"/>
+  <circle cx="395" cy="475" r="6" fill="#0099cc"/>
+
+  <!-- Tagline -->
+  <text x="100" y="535" font-family="system-ui, -apple-system, Helvetica, sans-serif" font-size="34" fill="#1a3a6b" opacity="0.85">Comprehensive care for kidneys, bladder,</text>
+  <text x="100" y="580" font-family="system-ui, -apple-system, Helvetica, sans-serif" font-size="34" fill="#1a3a6b" opacity="0.85">prostate and the entire urinary tract.</text>
+
+  <!-- Pills row -->
+  <g font-family="system-ui, -apple-system, Helvetica, sans-serif" font-weight="700" font-size="24">
+    <!-- Pill 1 -->
+    <circle cx="140" cy="700" r="38" fill="#e8eef6"/>
+    <path d="M 128 700 a 12 12 0 1 0 24 0 a 12 12 0 1 0 -24 0 M 140 688 v-10" stroke="#1a3a6b" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="195" y="690" fill="#1a3a6b">Specialist</text>
+    <text x="195" y="720" fill="#64748b" font-weight="500" font-size="20">Urologists</text>
+
+    <!-- Pill 2 -->
+    <circle cx="430" cy="700" r="38" fill="#e0f4fa"/>
+    <path d="M 418 692 l 10 10 l 14 -16" stroke="#0099cc" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="485" y="690" fill="#0099cc">Advanced</text>
+    <text x="485" y="720" fill="#64748b" font-weight="500" font-size="20">Procedures</text>
+
+    <!-- Pill 3 -->
+    <circle cx="730" cy="700" r="38" fill="#e8eef6"/>
+    <path d="M 720 690 h 20 M 720 700 h 20 M 720 710 h 20" stroke="#1a3a6b" stroke-width="3" stroke-linecap="round"/>
+    <text x="785" y="690" fill="#1a3a6b">Evidence</text>
+    <text x="785" y="720" fill="#64748b" font-weight="500" font-size="20">Based Care</text>
+
+    <!-- Pill 4 -->
+    <circle cx="1020" cy="700" r="38" fill="#e0f4fa"/>
+    <circle cx="1020" cy="697" r="6" fill="none" stroke="#0099cc" stroke-width="3"/>
+    <path d="M 1010 715 q 10 -10 20 0" stroke="#0099cc" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="1075" y="690" fill="#0099cc">Personalized</text>
+    <text x="1075" y="720" fill="#64748b" font-weight="500" font-size="20">Treatment</text>
+  </g>
+
+  <!-- Bottom tagline pill -->
+  <g>
+    <rect x="100" y="800" width="780" height="92" rx="46" fill="url(#upill)"/>
+    <circle cx="155" cy="846" r="26" fill="#ffffff" opacity="0.18"/>
+    <path d="M 142 850 a 13 13 0 1 0 26 0 q 0 -10 -13 -16 q -13 6 -13 16 z" fill="#ffffff"/>
+    <text x="200" y="838" font-family="system-ui, -apple-system, Helvetica, sans-serif" font-size="22" fill="#ffffff" opacity="0.9">Healing kidneys. Restoring flow.</text>
+    <text x="200" y="870" font-family="system-ui, -apple-system, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Care that lets you live freely again.</text>
+  </g>
+
+  <!-- Right-side organ illustration: stylized kidneys -->
+  <g transform="translate(1320 470)">
+    <circle cx="0" cy="0" r="290" fill="url(#uorgan)"/>
+    <!-- Two kidneys -->
+    <g transform="translate(-90 0)">
+      <path d="M -10 -120 C -90 -110 -110 -30 -85 50 C -60 110 0 120 35 95 C 65 75 75 35 60 -25 C 45 -100 15 -130 -10 -120 Z"
+            fill="url(#uwave)" opacity="0.92"/>
+      <path d="M -25 -10 C -10 -30 25 -25 40 -5"
+            fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(90 0) scale(-1 1)">
+      <path d="M -10 -120 C -90 -110 -110 -30 -85 50 C -60 110 0 120 35 95 C 65 75 75 35 60 -25 C 45 -100 15 -130 -10 -120 Z"
+            fill="url(#uwave)" opacity="0.92"/>
+      <path d="M -25 -10 C -10 -30 25 -25 40 -5"
+            fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Bottom-right curved wave accent -->
+  <path d="M 1120 941 Q 1380 760 1672 820 L 1672 941 Z" fill="#1a3a6b"/>
+  <path d="M 1240 941 Q 1450 820 1672 880 L 1672 941 Z" fill="#0099cc" opacity="0.85"/>
+</svg>

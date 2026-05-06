@@ -93,7 +93,7 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
   const heroImage = getCategoryImage(category);
 
   // Andrology has a complete pre-designed banner image — render it at full natural aspect with no overlays
-  const useFullBanner = category === "Andrology";
+  const useFullBanner = true; // all categories now use full-bleed banner images
 
   return (
     <>
@@ -207,7 +207,12 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-bold text-text mb-6">About {category}</h2>
+            <h2 className="text-3xl font-bold text-text mb-6">
+              {category === "Andrology" && "Best Andrology Treatment In Bangalore"}
+              {category === "Urology" && "Best Urology Treatment In Bangalore"}
+              {category === "Men's Health" && "Best Men's Health Treatment In Bangalore"}
+              {category === "Additional Services" && `About ${category}`}
+            </h2>
             <div className="space-y-5">
               {details.intro.map((p, i) => (
                 <p key={i} className="text-text-light text-base leading-relaxed">{p}</p>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { serviceCategories } from "@/data/services";
 
 type Props = {
   open: boolean;
@@ -15,8 +14,6 @@ export default function BookingModal({ open, onClose }: Props) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [service, setService] = useState("");
-  const [date, setDate] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
@@ -45,8 +42,6 @@ export default function BookingModal({ open, onClose }: Props) {
       `Phone: ${phone}`,
     ];
     if (email) lines.push(`Email: ${email}`);
-    if (service) lines.push(`Service: ${service}`);
-    if (date) lines.push(`Preferred Date: ${date}`);
     if (message) lines.push("", `Message: ${message}`);
     return lines.join("\n");
   }
@@ -144,41 +139,6 @@ export default function BookingModal({ open, onClose }: Props) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors text-sm"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="bm-service" className="block text-xs font-semibold text-text uppercase tracking-wide mb-1.5">
-                Service / Concern
-              </label>
-              <select
-                id="bm-service"
-                value={service}
-                onChange={(e) => setService(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors text-sm bg-white"
-              >
-                <option value="">Select a category</option>
-                {serviceCategories.map((c) => (
-                  <option key={c.name} value={c.name}>
-                    {c.name}
-                  </option>
-                ))}
-                <option value="Not sure / General consultation">Not sure / General consultation</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="bm-date" className="block text-xs font-semibold text-text uppercase tracking-wide mb-1.5">
-                Preferred Date
-              </label>
-              <input
-                id="bm-date"
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                min={new Date().toISOString().split("T")[0]}
                 className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors text-sm"
               />
             </div>

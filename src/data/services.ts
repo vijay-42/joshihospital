@@ -1110,9 +1110,9 @@ export function getServicesByCategory(category: ServiceCategory): Service[] {
 
 export const serviceCategories: { name: ServiceCategory; accent: "primary" | "secondary" | "accent" | "gold"; description: string; image: string }[] = [
   { name: "Andrology", accent: "secondary", description: "Male reproductive and sexual health", image: "/services/andrologybanner.png" },
-  { name: "Urology", accent: "primary", description: "Comprehensive urinary tract care", image: "/services/urology.svg" },
-  { name: "Men's Health", accent: "accent", description: "Holistic wellness for men", image: "/services/mens-health.svg" },
-  { name: "Additional Services", accent: "gold", description: "Fertility, imaging, and supporting care", image: "/services/additional.svg" },
+  { name: "Urology", accent: "primary", description: "Comprehensive urinary tract care", image: "/services/urologybanner.png" },
+  { name: "Men's Health", accent: "accent", description: "Holistic wellness for men", image: "/services/menshealthbanner.png" },
+  { name: "Additional Services", accent: "gold", description: "Fertility, imaging, and supporting care", image: "/services/additionalservicesbanner.png" },
 ];
 
 export function getCategoryImage(category: ServiceCategory): string {
