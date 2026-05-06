@@ -40,7 +40,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
   return (
     <>
       {/* Hero — banner with content overlay on top */}
-      <section className="relative bg-white overflow-hidden">
+      <section className="relative bg-white overflow-hidden flex items-center min-h-[340px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[520px]">
         {/* Background layer: image OR gradient fallback */}
         {hasBannerImage ? (
           <Image
