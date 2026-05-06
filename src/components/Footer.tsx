@@ -109,27 +109,26 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services — mirror header mega menu categories */}
           <div>
             <h3 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Our Services</h3>
             <ul className="space-y-3">
               {[
-                "Andrology",
-                "Urology",
-                "Male Infertility",
-                "Erectile Dysfunction",
-                "Kidney Stones",
-                "Men's Health",
+                { href: "/services/andrology-treatment-in-bangalore", label: "Andrology" },
+                { href: "/services/urology-treatment-in-bangalore", label: "Urology" },
+                { href: "/services/mens-health", label: "Men's Health" },
+                { href: "/services/additional-services", label: "Additional Services" },
+                { href: "/services", label: "All Services" },
               ].map((service) => (
-                <li key={service}>
+                <li key={service.href}>
                   <Link
-                    href="/services"
+                    href={service.href}
                     className="text-sm text-white/85 hover:text-gold transition-colors flex items-center gap-2 group"
                   >
                     <svg className="w-3 h-3 text-white/50 group-hover:text-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                    {service}
+                    {service.label}
                   </Link>
                 </li>
               ))}

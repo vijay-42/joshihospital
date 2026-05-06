@@ -12,12 +12,14 @@ export type Service = {
   faqs: { q: string; a: string }[];
   icon: string;
   accent: "primary" | "secondary" | "accent" | "gold";
+  image?: string;
 };
 
 export const services: Service[] = [
   // ─── ANDROLOGY ───────────────────────────────────────────
   {
     slug: "erectile-dysfunction-treatment-in-bangalore",
+    image: "/services/erectile-dysfunction-treatment-in-bangalore.png",
     category: "Andrology",
     title: "Erectile Dysfunction Treatment in Bangalore",
     shortDescription:
@@ -58,6 +60,7 @@ export const services: Service[] = [
   },
   {
     slug: "male-infertility-treatment-in-bangalore",
+    image: "/services/male-infertility-treatment-in-bangalore.png",
     category: "Andrology",
     title: "Male Infertility Treatment in Bangalore",
     shortDescription:
@@ -98,6 +101,7 @@ export const services: Service[] = [
   },
   {
     slug: "delayed-ejaculation-treatment-in-bangalore",
+    image: "/services/delayed-ejaculation-treatment-in-bangalore.png",
     category: "Andrology",
     title: "Delayed Ejaculation Treatment in Bangalore",
     shortDescription:
@@ -262,6 +266,7 @@ export const services: Service[] = [
   // ─── UROLOGY ─────────────────────────────────────────────
   {
     slug: "kidney-stone-treatment-in-bangalore",
+    image: "/services/kidney-stone-treatment-in-bangalore.png",
     category: "Urology",
     title: "Kidney Stone Treatment in Bangalore",
     shortDescription:
@@ -299,6 +304,7 @@ export const services: Service[] = [
   },
   {
     slug: "prostate-disorders-treatment-in-bangalore",
+    image: "/services/prostate-disorders-treatment-in-bangalore.png",
     category: "Urology",
     title: "Prostate Disorders Treatment in Bangalore",
     shortDescription:
@@ -342,6 +348,7 @@ export const services: Service[] = [
   },
   {
     slug: "reconstructive-urology-treatment-in-bangalore",
+    image: "/services/reconstructive-urology-treatment-in-bangalore.png",
     category: "Urology",
     title: "Reconstructive Urology Treatment in Bangalore",
     shortDescription:
@@ -380,6 +387,7 @@ export const services: Service[] = [
   },
   {
     slug: "urinary-tract-infection-treatment-in-bangalore",
+    image: "/services/urinary-tract-infection-treatment-in-bangalore.png",
     category: "Urology",
     title: "Urinary Tract Infection Treatment in Bangalore",
     shortDescription:
@@ -414,6 +422,7 @@ export const services: Service[] = [
   },
   {
     slug: "urological-cancers-treatment-in-bangalore",
+    image: "/services/urological-cancers-treatment-in-bangalore.png",
     category: "Urology",
     title: "Urological Cancers Treatment in Bangalore",
     shortDescription:
@@ -457,6 +466,7 @@ export const services: Service[] = [
   },
   {
     slug: "urinary-incontinence-treatment-in-bangalore",
+    image: "/services/urinary-incontinence-treatment-in-bangalore.png",
     category: "Urology",
     title: "Urinary Incontinence Treatment in Bangalore",
     shortDescription:
@@ -733,6 +743,7 @@ export const services: Service[] = [
   // ─── ADDITIONAL SERVICES ─────────────────────────────────
   {
     slug: "female-fertility-treatment-in-bangalore",
+    image: "/services/female-fertility-treatment-in-bangalore.png",
     category: "Additional Services",
     title: "Female Fertility Treatment in Bangalore",
     shortDescription:
@@ -778,6 +789,7 @@ export const services: Service[] = [
   },
   {
     slug: "iui-treatment-in-bangalore",
+    image: "/services/iui-treatment-in-bangalore.png",
     category: "Additional Services",
     title: "IUI Treatment in Bangalore",
     shortDescription:
@@ -820,6 +832,7 @@ export const services: Service[] = [
   },
   {
     slug: "icsi-treatment-in-bangalore",
+    image: "/services/icsi-treatment-in-bangalore.png",
     category: "Additional Services",
     title: "ICSI Treatment in Bangalore",
     shortDescription:
@@ -863,6 +876,7 @@ export const services: Service[] = [
   },
   {
     slug: "ivf-treatment-in-bangalore",
+    image: "/services/ivf-treatment-in-bangalore.png",
     category: "Additional Services",
     title: "IVF Treatment in Bangalore",
     shortDescription:
@@ -906,6 +920,7 @@ export const services: Service[] = [
   },
   {
     slug: "advanced-semen-analysis-in-bangalore",
+    image: "/services/advanced-semen-analysis-in-bangalore.png",
     category: "Additional Services",
     title: "Advanced Semen Analysis in Bangalore",
     shortDescription:
@@ -949,6 +964,7 @@ export const services: Service[] = [
   },
   {
     slug: "best-gynaecology-hospital-in-bangalore",
+    image: "/services/best-gynaecology-hospital-in-bangalore.png",
     category: "Additional Services",
     title: "Best Gynaecology Hospital in Bangalore",
     shortDescription:
@@ -994,6 +1010,7 @@ export const services: Service[] = [
   },
   {
     slug: "best-radiology-hospital-in-bangalore",
+    image: "/services/best-radiology-hospital-in-bangalore.png",
     category: "Additional Services",
     title: "Best Radiology Hospital in Bangalore",
     shortDescription:
@@ -1035,6 +1052,7 @@ export const services: Service[] = [
   },
   {
     slug: "dermatology",
+    image: "/services/dermatology.png",
     category: "Additional Services",
     title: "Dermatology",
     shortDescription:
@@ -1067,6 +1085,7 @@ export const services: Service[] = [
   },
   {
     slug: "internal-medicine",
+    image: "/services/internal-medicine.png",
     category: "Additional Services",
     title: "Internal Medicine",
     shortDescription:
@@ -1117,4 +1136,8 @@ export const serviceCategories: { name: ServiceCategory; accent: "primary" | "se
 
 export function getCategoryImage(category: ServiceCategory): string {
   return serviceCategories.find((c) => c.name === category)?.image ?? "/services/andrology.svg";
+}
+
+export function getServiceImage(service: Service): string {
+  return service.image ?? getCategoryImage(service.category);
 }

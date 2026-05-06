@@ -265,12 +265,12 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right actions — Book Appointment + Image + Mobile menu */}
+          {/* Right actions — Book Appointment (desktop) + Image + Mobile menu */}
           <div className="flex items-center gap-3 justify-self-end">
             <button
               type="button"
               onClick={() => setBookingOpen(true)}
-              className="bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary text-white px-5 lg:px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap"
+              className="hidden lg:inline-flex bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary text-white px-5 lg:px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap"
             >
               Book Appointment
             </button>
@@ -304,6 +304,20 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-gray-100 bg-white animate-fade-in">
           <div className="px-4 py-4 space-y-1">
+            {/* Book Appointment — appears at top of mobile menu (under hamburger) */}
+            <button
+              type="button"
+              onClick={() => {
+                setMobileOpen(false);
+                setBookingOpen(true);
+              }}
+              className="w-full mb-2 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary text-white px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-md"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="16" rx="2" strokeWidth={1.8} /><path strokeLinecap="round" strokeWidth={1.8} d="M3 9h18M8 3v4M16 3v4" />
+              </svg>
+              Book Appointment
+            </button>
             {navLinks.map((link) => {
               const hasMenu = !!(link.dropdown || link.megaMenu);
               const isOpen = dropdownOpen === link.label;
