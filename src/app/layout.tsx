@@ -17,13 +17,6 @@ export const metadata: Metadata = {
     "Comprehensive urological and andrological care in Bengaluru by Dr. Praveen Joshi. Expert treatment for male infertility, erectile dysfunction, kidney stones, and more. 10,000+ patients treated.",
   keywords:
     "urologist bengaluru, andrologist bengaluru, male infertility, erectile dysfunction, kidney stones, Dr Praveen Joshi, urology sahakara nagar",
-  icons: {
-    icon: [
-      { url: "/logo.webp", type: "image/webp" },
-    ],
-    apple: "/logo.webp",
-    shortcut: "/logo.webp",
-  },
 };
 
 export default function RootLayout({
