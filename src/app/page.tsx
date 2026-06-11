@@ -742,7 +742,7 @@ export default function Home() {
               <Link key={d.slug} href={`/doctors/${d.slug}`} className="group block">
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 group-hover:shadow-2xl group-hover:-translate-y-1 transition-all duration-300">
                   <Image src={d.img} alt={d.name} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                  <div className={`absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t ${d.grad} opacity-0 group-hover:opacity-90 transition-opacity duration-300`} />
+                  <div className={`absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t ${d.grad} opacity-0 group-hover:opacity-80 transition-opacity duration-300`} />
                   <div className="absolute inset-x-0 bottom-0 p-4 text-white opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     <div className="text-xs font-semibold">View Profile →</div>
                   </div>
