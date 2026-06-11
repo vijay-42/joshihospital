@@ -122,7 +122,7 @@ export default async function DoctorDetailPage({ params }: { params: Params }) {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Bio */}
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold text-text mb-6">About {doctor.name.split(" ").slice(0, 2).join(" ")}</h2>
+              <h2 className="text-3xl font-bold text-text mb-6">About {doctor.name}</h2>
               <div className="space-y-5">
                 {doctor.fullBio.map((para, i) => (
                   <p key={i} className="text-text-light leading-relaxed text-base">
