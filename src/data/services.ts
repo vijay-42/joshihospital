@@ -705,40 +705,6 @@ export const services: Service[] = [
     icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
     accent: "accent",
   },
-  {
-    slug: "yoga-wellness",
-    category: "Men's Health",
-    title: "Yoga & Wellness",
-    shortDescription:
-      "Yoga, meditation, and wellness programs designed for men — supporting urological, sexual, and overall health.",
-    longDescription: [
-      "Yoga and structured wellness practices have proven benefits for stress reduction, sexual function, prostate health, and overall well-being. We integrate evidence-based wellness practices into our holistic men's health approach.",
-      "Our wellness programs include yoga therapy, breathing techniques, meditation, and lifestyle guidance — tailored for men's specific health goals.",
-    ],
-    symptoms: [
-      "Chronic stress or burnout",
-      "Sleep difficulties",
-      "Sedentary lifestyle",
-      "Pelvic floor weakness",
-      "General health & vitality concerns",
-    ],
-    treatments: [
-      { name: "Therapeutic Yoga", description: "Customized yoga practice for specific health concerns." },
-      { name: "Breathing Techniques (Pranayama)", description: "Evidence-based breathing for stress and ED." },
-      { name: "Meditation & Mindfulness", description: "Guided practices for mental wellness." },
-      { name: "Pelvic Floor Yoga", description: "Targeted practices for urological and sexual health." },
-    ],
-    whyChooseUs: [
-      "Integrated wellness approach",
-      "Evidence-based practices",
-      "Tailored for men's health concerns",
-    ],
-    faqs: [
-      { q: "Can yoga really help ED?", a: "Yes — research shows specific yoga practices improve erectile function, particularly in stress-related ED. They complement medical treatment well." },
-    ],
-    icon: "M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12z",
-    accent: "accent",
-  },
 
   // ─── ADDITIONAL SERVICES ─────────────────────────────────
   {
@@ -1048,39 +1014,6 @@ export const services: Service[] = [
       { q: "Do I need to fast or prepare?", a: "It depends on the test — some scans need a full bladder, others empty, and a few need fasting. Our team will advise specific preparation when booking." },
     ],
     icon: "M9 12.75L11.25 15 15 9.75",
-    accent: "gold",
-  },
-  {
-    slug: "dermatology",
-    image: "/services/dermatology.webp",
-    category: "Additional Services",
-    title: "Dermatology",
-    shortDescription:
-      "Skin and hair care — addressing common male dermatology concerns including hair loss, acne, pigmentation, and skin lesions.",
-    longDescription: [
-      "Our dermatology service complements our men's health offering with expert skin and hair care. From hair loss treatment to acne management and skin lesion evaluation, we provide evidence-based dermatology under the same roof.",
-    ],
-    symptoms: [
-      "Hair thinning or baldness",
-      "Acne or pigmentation",
-      "Skin rashes or eczema",
-      "Suspicious moles or skin lesions",
-    ],
-    treatments: [
-      { name: "Hair Loss Care", description: "PRP, mesotherapy, medical management, and transplant options." },
-      { name: "Acne Treatment", description: "Medical-grade treatments and chemical peels." },
-      { name: "Pigmentation Care", description: "Targeted treatments for hyperpigmentation and melasma." },
-      { name: "Lesion Evaluation", description: "Examination and management of moles, growths, and skin cancers." },
-    ],
-    whyChooseUs: [
-      "Onsite dermatology consults",
-      "Integrated with men's health",
-      "Evidence-based treatments",
-    ],
-    faqs: [
-      { q: "Does PRP really work for hair loss?", a: "Yes — PRP has solid evidence for early hair loss. Best results come from combining PRP with medical management." },
-    ],
-    icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z",
     accent: "gold",
   },
   {

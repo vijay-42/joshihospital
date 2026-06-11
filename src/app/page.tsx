@@ -100,7 +100,7 @@ const services = [
   },
   {
     title: "Men's Health",
-    description: "Holistic men's wellness including low testosterone management, prostate health, preventive cardiology, and yoga & wellness.",
+    description: "Holistic men's wellness including low testosterone management, prostate health, preventive cardiology, and lifestyle care.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-7 h-7">
         {/* Heart — beats; pulse line stays steady */}

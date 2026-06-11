@@ -54,7 +54,6 @@ const navLinks: NavLink[] = [
           { href: "/services/diabetes-hypertension", label: "Diabetes & Hypertension" },
           { href: "/services/cosmetology-for-men", label: "Cosmetology for Men" },
           { href: "/services/psychiatry-counselling", label: "Psychiatry & Counselling" },
-          { href: "/services/yoga-wellness", label: "Yoga & Wellness" },
         ],
       },
       {
@@ -68,7 +67,6 @@ const navLinks: NavLink[] = [
           { href: "/services/advanced-semen-analysis-in-bangalore", label: "Advanced Semen Analysis" },
           { href: "/services/best-gynaecology-hospital-in-bangalore", label: "Gynaecology" },
           { href: "/services/best-radiology-hospital-in-bangalore", label: "Radiology" },
-          { href: "/services/dermatology", label: "Dermatology" },
           { href: "/services/internal-medicine", label: "Internal Medicine" },
         ],
       },

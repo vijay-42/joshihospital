@@ -65,20 +65,19 @@ const categoryDetails: Record<ServiceCategory, {
       { title: "Hormonal Optimisation", desc: "Specialist-led testosterone replacement therapy with strict safety monitoring and lifestyle integration." },
       { title: "Cardiometabolic Care", desc: "Recognising the ED-cardiac link, we screen and manage diabetes, hypertension, and cardiovascular risk." },
       { title: "Mental & Sexual Wellness", desc: "Onsite clinical psychologist for performance anxiety, depression, and relationship support." },
-      { title: "Yoga & Lifestyle", desc: "Evidence-based wellness practices, structured programs, and lifestyle coaching for sustainable health." },
     ],
   },
   "Additional Services": {
     tagline: "Fertility, imaging, and supporting specialties — all under one roof.",
     intro: [
       "Comprehensive andrology and urology care often requires more than one specialist. Our additional services bring fertility, gynaecology, advanced laboratory, imaging, and other supporting specialties into the same building — so couples and families don't have to coordinate care across multiple hospitals.",
-      "From IUI, IVF, ICSI, and PICSI to advanced semen analysis, scrotal doppler, dermatology, and internal medicine, we deliver coordinated multidisciplinary care led by experienced consultants.",
+      "From IUI, IVF, ICSI, and PICSI to advanced semen analysis, scrotal doppler, and internal medicine, we deliver coordinated multidisciplinary care led by experienced consultants.",
     ],
     highlights: [
       { title: "Couples Fertility Care", desc: "Integrated male + female fertility evaluation with IUI, IVF, ICSI, and PICSI under one roof." },
       { title: "Onsite Andrology Lab", desc: "WHO 2021 standard semen analysis, DNA fragmentation, and surgical sperm retrieval support." },
       { title: "Specialist Imaging", desc: "High-resolution scrotal doppler, renal/prostate ultrasound, and image-guided procedures by a consultant radiologist." },
-      { title: "Cosmetology & Internal Medicine", desc: "Dermatology, anti-ageing, and general medicine consultations for complete adult care." },
+      { title: "Cosmetology & Internal Medicine", desc: "Aesthetic, anti-ageing, and general medicine consultations for complete adult care." },
     ],
   },
 };
