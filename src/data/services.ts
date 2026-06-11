@@ -930,7 +930,7 @@ export const services: Service[] = [
   },
   {
     slug: "sperm-retrieval-treatment-in-bangalore",
-    image: "/services/additionalservicesbanner.webp",
+    image: "/services/ivf-treatment-in-bangalore.webp",
     category: "Additional Services",
     title: "Sperm Retrieval Treatment in Bangalore",
     shortDescription:
@@ -978,7 +978,7 @@ export const services: Service[] = [
   },
   {
     slug: "pesa-treatment-in-bangalore",
-    image: "/services/additionalservicesbanner.webp",
+    image: "/services/advanced-semen-analysis-in-bangalore.webp",
     category: "Additional Services",
     title: "PESA Treatment in Bangalore",
     shortDescription:
@@ -1027,7 +1027,7 @@ export const services: Service[] = [
   },
   {
     slug: "tesa-treatment-in-bangalore",
-    image: "/services/additionalservicesbanner.webp",
+    image: "/services/male-infertility-treatment-in-bangalore.webp",
     category: "Additional Services",
     title: "TESA Treatment in Bangalore",
     shortDescription:
