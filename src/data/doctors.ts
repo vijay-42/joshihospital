@@ -23,7 +23,7 @@ export const doctors: Doctor[] = [
     category: "Founder",
     qualifications: ["MBBS", "DNB - General Surgery", "DNB - Urology / Genito-Urinary Surgery"],
     experience: "20+ Years",
-    image: "/dr-praveen-joshi.webp",
+    image: "/doctors/dr-praveen-joshi.webp",
     shortBio:
       "Founder of Joshi's Andrology & Urology Centre with a special interest in Male Infertility, Sexual Dysfunction, and Penile Reconstruction.",
     fullBio: [
@@ -58,7 +58,7 @@ export const doctors: Doctor[] = [
     category: "Urology",
     qualifications: ["MBBS", "MS - General Surgery", "MCh - Urology"],
     experience: "10+ Years",
-    image: "/doctor.svg",
+    image: "/doctors/dr-sai-dilip-sriramula.jpg",
     shortBio:
       "Consultant urologist trained in advanced endoscopic stone management, BPH surgery, and reconstructive urology — supporting comprehensive urological care at Joshi's Centre.",
     fullBio: [
@@ -83,7 +83,7 @@ export const doctors: Doctor[] = [
     category: "General Medicine",
     qualifications: ["MBBS", "MD - General Medicine"],
     experience: "12+ Years",
-    image: "/doctor.svg",
+    image: "/doctors/placeholder.svg",
     shortBio:
       "Visiting general physician offering comprehensive adult medical care — diabetes, hypertension, cardiometabolic risk, and pre-surgical evaluation as part of the centre's holistic men's health approach.",
     fullBio: [
@@ -108,7 +108,7 @@ export const doctors: Doctor[] = [
     category: "Fertility",
     qualifications: ["MBBS", "DNB", "FRM (Fellow in Reproductive Medicine)", "FICOG"],
     experience: "15+ Years",
-    image: "/doctor.svg",
+    image: "/doctors/placeholder.svg",
     shortBio:
       "Senior visiting consultant in obstetrics, gynaecology and reproductive medicine — leading female fertility care alongside our andrology team in an integrated couples-focused programme.",
     fullBio: [
@@ -133,7 +133,7 @@ export const doctors: Doctor[] = [
     category: "Fertility",
     qualifications: ["MBBS", "MD - OBG", "FMAS", "DMAS", "Fellow in Infertility"],
     experience: "8+ Years",
-    image: "/doctor.svg",
+    image: "/doctors/placeholder.svg",
     shortBio:
       "Visiting fertility specialist with focused training in minimally invasive gynaecology and infertility — supporting personalised IUI, IVF, and reproductive surgery plans for couples.",
     fullBio: [
@@ -158,7 +158,7 @@ export const doctors: Doctor[] = [
     category: "Surgery",
     qualifications: ["MBBS", "MS - General Surgery"],
     experience: "12+ Years",
-    image: "/doctor.svg",
+    image: "/doctors/placeholder.svg",
     shortBio:
       "Visiting general surgeon supporting laparoscopic and open surgical procedures — including general surgical conditions and combined cases where general and urological surgery overlap.",
     fullBio: [

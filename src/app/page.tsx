@@ -260,7 +260,7 @@ export default function Home() {
                   <div className="relative bg-white rounded-[2.5rem] p-3 shadow-2xl border border-white/50">
                     <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden bg-gradient-to-br from-primary-light via-white to-secondary-light">
                       <Image
-                        src="/dr-praveen-joshi.webp"
+                        src="/doctors/dr-praveen-joshi.webp"
                         alt="Dr. Praveen Joshi — Urologist & Andrologist"
                         fill
                         sizes="(max-width: 1024px) 100vw, 40vw"
@@ -587,7 +587,7 @@ export default function Home() {
                 {/* Photo */}
                 <div className="relative h-[420px] w-full">
                   <Image
-                    src="/dr-praveen-joshi.webp"
+                    src="/doctors/dr-praveen-joshi.webp"
                     alt="Dr. Praveen Joshi — Founder & Chief Urologist"
                     fill
                     sizes="(max-width: 1024px) 100vw, 45vw"
@@ -735,9 +735,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-6">
             {[
-              { slug: "dr-praveen-joshi", name: "Dr. Praveen Joshi", title: "Founder, Urology & Andrology", img: "/dr-praveen-joshi.webp", grad: "from-primary to-primary-dark" },
-              { slug: "dr-sai-dilip-sriramula", name: "Dr. Sai Dilip Sriramula", title: "Consultant Urologist", img: "/doctor.svg", grad: "from-accent to-primary" },
-              { slug: "dr-bharathi-rajanna", name: "Dr. Bharathi Rajanna", title: "OBS, Gynaec & Fertility", img: "/doctor.svg", grad: "from-gold to-secondary" },
+              { slug: "dr-praveen-joshi", name: "Dr. Praveen Joshi", title: "Founder, Urology & Andrology", img: "/doctors/dr-praveen-joshi.webp", grad: "from-primary to-primary-dark" },
+              { slug: "dr-sai-dilip-sriramula", name: "Dr. Sai Dilip Sriramula", title: "Consultant Urologist", img: "/doctors/dr-sai-dilip-sriramula.jpg", grad: "from-accent to-primary" },
+              { slug: "dr-bharathi-rajanna", name: "Dr. Bharathi Rajanna", title: "OBS, Gynaec & Fertility", img: "/doctors/placeholder.svg", grad: "from-gold to-secondary" },
             ].map((d) => (
               <Link key={d.slug} href={`/doctors/${d.slug}`} className="group block">
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 group-hover:shadow-2xl group-hover:-translate-y-1 transition-all duration-300">
