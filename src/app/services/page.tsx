@@ -19,6 +19,7 @@ const categoryAnchors: Record<string, string> = {
   "Andrology": "andrology",
   "Urology": "urology",
   "Men's Health": "mens-health",
+  "Fertility": "fertility",
   "Additional Services": "additional",
 };
 
@@ -38,7 +39,7 @@ export default function ServicesPage() {
               Integrated Andrology &amp; Urology Services
             </h1>
             <p className="mt-6 text-lg text-text-light leading-relaxed">
-              Comprehensive care across four specialised divisions — Andrology, Urology, Men&apos;s Health, and Additional Services — all under one roof at Joshi&apos;s Centre.
+              Comprehensive care across five specialised divisions — Andrology, Urology, Men&apos;s Health, Fertility, and Additional Services — all under one roof at Joshi&apos;s Centre.
             </p>
           </div>
 

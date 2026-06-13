@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
             <p className="text-xs italic text-gold mb-2">Integrated Andrology &amp; Urology Services</p>
             <p className="text-sm text-white/85 leading-relaxed mb-5">
-              Comprehensive urological and andrological care with over 10,000+
+              Comprehensive urological and andrological care with over 15,000+
               patients treated and 4,000+ successful surgeries since 2018.
             </p>
             <div className="flex items-center gap-3">
@@ -105,6 +105,7 @@ export default function Footer() {
                 { href: "/services/andrology-treatment-in-bangalore", label: "Andrology" },
                 { href: "/services/urology-treatment-in-bangalore", label: "Urology" },
                 { href: "/services/mens-health", label: "Men's Health" },
+                { href: "/services/fertility", label: "Fertility" },
                 { href: "/services/additional-services", label: "Additional Services" },
                 { href: "/services", label: "All Services" },
               ].map((service) => (

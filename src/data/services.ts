@@ -1,4 +1,4 @@
-export type ServiceCategory = "Andrology" | "Urology" | "Men's Health" | "Additional Services";
+export type ServiceCategory = "Andrology" | "Urology" | "Men's Health" | "Fertility" | "Additional Services";
 
 export type Service = {
   slug: string;
@@ -710,7 +710,7 @@ export const services: Service[] = [
   {
     slug: "female-fertility-treatment-in-bangalore",
     image: "/services/female-fertility-treatment-in-bangalore.webp",
-    category: "Additional Services",
+    category: "Fertility",
     title: "Female Fertility Treatment in Bangalore",
     shortDescription:
       "Advanced and compassionate female fertility care at Joshi's Andrology and Urology Hospital, Sahakar Nagar — personalised treatment plans for PCOS, ovulation disorders, endometriosis, and more.",
@@ -756,7 +756,7 @@ export const services: Service[] = [
   {
     slug: "iui-treatment-in-bangalore",
     image: "/services/iui-treatment-in-bangalore.webp",
-    category: "Additional Services",
+    category: "Fertility",
     title: "IUI Treatment in Bangalore",
     shortDescription:
       "Trusted IUI care at Joshi's Andrology & Urology Hospital, Sahakar Nagar — advanced fertility solutions, experienced specialists, and a structured, patient-friendly process.",
@@ -799,7 +799,7 @@ export const services: Service[] = [
   {
     slug: "icsi-treatment-in-bangalore",
     image: "/services/icsi-treatment-in-bangalore.webp",
-    category: "Additional Services",
+    category: "Fertility",
     title: "ICSI Treatment in Bangalore",
     shortDescription:
       "Advanced ICSI fertility care at Joshi's Andrology and Urology Hospital, Sahakar Nagar — a focused solution for male infertility, low sperm count, poor motility, and previous IVF failures.",
@@ -843,7 +843,7 @@ export const services: Service[] = [
   {
     slug: "ivf-treatment-in-bangalore",
     image: "/services/ivf-treatment-in-bangalore.webp",
-    category: "Additional Services",
+    category: "Fertility",
     title: "IVF Treatment in Bangalore",
     shortDescription:
       "Advanced IVF care at Joshi's Andrology and Urology Hospital, Sahakar Nagar — modern lab techniques, experienced specialists, and personalised treatment plans for every couple.",
@@ -887,7 +887,7 @@ export const services: Service[] = [
   {
     slug: "advanced-semen-analysis-in-bangalore",
     image: "/services/advanced-semen-analysis-in-bangalore.webp",
-    category: "Additional Services",
+    category: "Fertility",
     title: "Advanced Semen Analysis in Bangalore",
     shortDescription:
       "Detailed, accurate semen evaluation at Joshi's Andrology and Urology Hospital, Sahakar Nagar — modern lab, expert interpretation, and personalised treatment guidance.",
@@ -931,7 +931,7 @@ export const services: Service[] = [
   {
     slug: "sperm-retrieval-treatment-in-bangalore",
     image: "/services/ivf-treatment-in-bangalore.webp",
-    category: "Additional Services",
+    category: "Fertility",
     title: "Sperm Retrieval Treatment in Bangalore",
     shortDescription:
       "Advanced surgical sperm retrieval in Bangalore — PESA, TESA, TESE, and Micro-TESE for men with obstructive and non-obstructive azoospermia, paired with IVF / ICSI at Joshi Andrology and Urology Centre.",
@@ -979,7 +979,7 @@ export const services: Service[] = [
   {
     slug: "pesa-treatment-in-bangalore",
     image: "/services/advanced-semen-analysis-in-bangalore.webp",
-    category: "Additional Services",
+    category: "Fertility",
     title: "PESA Treatment in Bangalore",
     shortDescription:
       "Advanced PESA (Percutaneous Epididymal Sperm Aspiration) in Bangalore — minimally invasive sperm retrieval for obstructive azoospermia, with expert IVF and ICSI integration at Joshi Andrology and Urology Centre.",
@@ -1028,7 +1028,7 @@ export const services: Service[] = [
   {
     slug: "tesa-treatment-in-bangalore",
     image: "/services/male-infertility-treatment-in-bangalore.webp",
-    category: "Additional Services",
+    category: "Fertility",
     title: "TESA Treatment in Bangalore",
     shortDescription:
       "Advanced TESA (Testicular Sperm Aspiration) in Bangalore — minimally invasive sperm retrieval from testicular tissue for azoospermia, paired with IVF / ICSI at Joshi Andrology and Urology Centre.",
@@ -1211,7 +1211,8 @@ export const serviceCategories: { name: ServiceCategory; accent: "primary" | "se
   { name: "Andrology", accent: "secondary", description: "Male reproductive and sexual health", image: "/services/andrologybanner.webp" },
   { name: "Urology", accent: "primary", description: "Comprehensive urinary tract care", image: "/services/urologybanner.webp" },
   { name: "Men's Health", accent: "accent", description: "Holistic wellness for men", image: "/services/menshealthbanner.webp" },
-  { name: "Additional Services", accent: "gold", description: "Fertility, imaging, and supporting care", image: "/services/additionalservicesbanner.webp" },
+  { name: "Fertility", accent: "secondary", description: "Complete fertility care for couples", image: "/services/additionalservicesbanner.webp" },
+  { name: "Additional Services", accent: "gold", description: "Imaging, gynaecology, and supporting care", image: "/services/additionalservicesbanner.webp" },
 ];
 
 export function getCategoryImage(category: ServiceCategory): string {

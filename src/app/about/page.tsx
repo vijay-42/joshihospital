@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Us | Joshi's Andrology & Urology Centre",
   description:
-    "Meet our team of specialist doctors led by Dr. Praveen Joshi. Learn about our centre's mission, values, and track record of 10,000+ patients.",
+    "Meet our team of specialist doctors led by Dr. Praveen Joshi. Learn about our centre's mission, values, and track record of 15,000+ patients.",
 };
 
 const doctors = [
@@ -99,11 +99,11 @@ export default function AboutPage() {
                 We are committed to delivering the highest standard of urological and andrological care through advanced diagnostics, evidence-based treatments, and a patient-first approach.
               </p>
               <p className="text-text-light leading-relaxed mb-8">
-                Since our inception, we have served over <strong className="text-text">10,000 patients</strong> and conducted more than <strong className="text-text">4,000 surgeries</strong>. Our multidisciplinary specialist team ensures comprehensive care under one roof, eliminating the need for multiple hospital visits.
+                Since our inception, we have served over <strong className="text-text">15,000 patients</strong> and conducted more than <strong className="text-text">4,000 surgeries</strong>. Our multidisciplinary specialist team ensures comprehensive care under one roof, eliminating the need for multiple hospital visits.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-primary-light rounded-xl p-5 text-center">
-                  <div className="text-3xl font-bold text-primary">10,000+</div>
+                  <div className="text-3xl font-bold text-primary">15,000+</div>
                   <div className="text-sm text-text-light mt-1">Patients Served</div>
                 </div>
                 <div className="bg-secondary-light rounded-xl p-5 text-center">

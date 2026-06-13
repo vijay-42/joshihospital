@@ -15,7 +15,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Joshi's Andrology & Urology Centre | Bengaluru",
   description:
-    "Comprehensive urological and andrological care in Bengaluru by Dr. Praveen Joshi. Expert treatment for male infertility, erectile dysfunction, kidney stones, and more. 10,000+ patients treated.",
+    "Comprehensive urological and andrological care in Bengaluru by Dr. Praveen Joshi. Expert treatment for male infertility, erectile dysfunction, kidney stones, and more. 15,000+ patients treated.",
   keywords:
     "urologist bengaluru, andrologist bengaluru, male infertility, erectile dysfunction, kidney stones, Dr Praveen Joshi, urology sahakara nagar",
 };

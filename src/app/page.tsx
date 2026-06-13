@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const stats = [
-  { value: "10,000+", label: "Patients Treated", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" },
+  { value: "15,000+", label: "Patients Treated", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" },
   { value: "4,000+", label: "Surgeries Performed", icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" },
-  { value: "20+", label: "Years Experience", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
+  { value: "10+", label: "Years Experience", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
   { value: "4", label: "Specialist Doctors", icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" },
 ];
 
@@ -141,7 +141,7 @@ const whyChoose = [
   { title: "Single Facility", desc: "Complete diagnostics and treatment under one roof — no multiple hospital visits" },
   { title: "International Standards", desc: "WHO-standard protocols and state-of-the-art equipment for every procedure" },
   { title: "Multidisciplinary Team", desc: "Specialist team including radiologist, psychologist & laparoscopic surgeon" },
-  { title: "20+ Years Expertise", desc: "Board-certified urologist & andrologist with proven track record of 10,000+ patients" },
+  { title: "10+ Years Expertise", desc: "Board-certified urologist & andrologist with proven track record of 15,000+ patients" },
   { title: "Complete Privacy", desc: "Confidential care with private consultation rooms for sensitive conditions" },
   { title: "Ethical & Transparent", desc: "Evidence-based treatments with honest guidance and fair pricing" },
 ];
@@ -188,7 +188,7 @@ export default function Home() {
                 Bengaluru&apos;s Trusted Urology &amp; Andrology Centre
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-text leading-[1.05] tracking-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-text leading-[1.05] tracking-tight">
                 Expert Care in{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10 bg-gradient-to-r from-primary via-primary-dark to-primary bg-clip-text text-transparent">
@@ -204,12 +204,12 @@ export default function Home() {
 
               <p className="mt-6 text-base md:text-lg text-text-light leading-relaxed max-w-2xl">
                 Led by <strong className="text-text">Dr. Praveen Joshi</strong>, our centre provides comprehensive,
-                compassionate care for all urological and andrological conditions. Over 10,000 patients trust us with their health.
+                compassionate care for all urological and andrological conditions. Over 15,000 patients trust us with their health.
               </p>
 
               {/* Quick highlights */}
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-                {["20+ Years Experience", "Single-Facility Care", "100% Confidential"].map((text) => (
+                {["10+ Years Experience", "Single-Facility Care", "100% Confidential"].map((text) => (
                   <div key={text} className="flex items-center gap-2 text-sm font-semibold text-text">
                     <div className="w-5 h-5 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shrink-0 shadow-sm">
                       <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -224,9 +224,9 @@ export default function Home() {
               {/* Inline stats strip — balances visual weight with the right photo */}
               <div className="mt-10 grid grid-cols-3 max-w-lg divide-x divide-primary/10 bg-white/85 backdrop-blur rounded-2xl border border-primary/10 shadow-md overflow-hidden">
                 {[
-                  { value: "10k+", label: "Patients" },
+                  { value: "15k+", label: "Patients" },
                   { value: "4k+", label: "Surgeries" },
-                  { value: "20+", label: "Years" },
+                  { value: "10+", label: "Years" },
                 ].map((s) => (
                   <div key={s.label} className="px-5 py-4 text-center">
                     <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-none">
@@ -284,7 +284,7 @@ export default function Home() {
                         <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
-                        20+ Years
+                        10+ Years
                       </div>
 
                       {/* Bottom name overlay */}
@@ -311,7 +311,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="text-base font-bold text-text whitespace-nowrap leading-tight">
-                      <span className="text-2xl">10k+</span> Happy Customers
+                      <span className="text-2xl">15k+</span> Happy Customers
                     </div>
                   </div>
 
@@ -600,7 +600,7 @@ export default function Home() {
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
-                    20+ Years
+                    10+ Years
                   </div>
                 </div>
 

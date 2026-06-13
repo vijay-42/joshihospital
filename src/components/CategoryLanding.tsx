@@ -18,8 +18,17 @@ const categorySlugs: Record<ServiceCategory, string> = {
   "Andrology": "andrology-treatment-in-bangalore",
   "Urology": "urology-treatment-in-bangalore",
   "Men's Health": "mens-health",
+  "Fertility": "fertility",
   "Additional Services": "additional-services",
 };
+
+// Categories that have a pre-designed full-bleed banner asset
+const bannerCategories = new Set<ServiceCategory>([
+  "Andrology",
+  "Urology",
+  "Men's Health",
+  "Additional Services",
+]);
 
 const categoryDetails: Record<ServiceCategory, {
   tagline: string;
@@ -67,17 +76,31 @@ const categoryDetails: Record<ServiceCategory, {
       { title: "Mental & Sexual Wellness", desc: "Onsite clinical psychologist for performance anxiety, depression, and relationship support." },
     ],
   },
-  "Additional Services": {
-    tagline: "Fertility, imaging, and supporting specialties — all under one roof.",
+  "Fertility": {
+    tagline: "Complete fertility care for couples — advanced treatments under one roof.",
     intro: [
-      "Comprehensive andrology and urology care often requires more than one specialist. Our additional services bring fertility, gynaecology, advanced laboratory, imaging, and other supporting specialties into the same building — so couples and families don't have to coordinate care across multiple hospitals.",
-      "From IUI, IVF, ICSI, and PICSI to advanced semen analysis, scrotal doppler, and internal medicine, we deliver coordinated multidisciplinary care led by experienced consultants.",
+      "Starting a family can be challenging, but you don't have to face it alone. At Joshi's Andrology and Urology Hospital in Sahakar Nagar, Bangalore, our dedicated fertility programme brings together male and female reproductive care, advanced laboratory diagnostics, and assisted reproduction — all in one place.",
+      "From your first evaluation to advanced treatments like IUI, IVF, and ICSI, our experienced consultants design a personalised plan based on the underlying cause. With onsite WHO-standard semen analysis, surgical sperm retrieval (TESA, PESA), and coordinated female fertility care, couples receive seamless, confidential support throughout their journey.",
+      "We understand how emotional and personal this journey is. Our team offers compassionate, judgment-free care with clear guidance at every step — helping you make informed decisions and giving you the best possible chance of a successful pregnancy.",
     ],
     highlights: [
-      { title: "Couples Fertility Care", desc: "Integrated male + female fertility evaluation with IUI, IVF, ICSI, and PICSI under one roof." },
-      { title: "Onsite Andrology Lab", desc: "WHO 2021 standard semen analysis, DNA fragmentation, and surgical sperm retrieval support." },
+      { title: "Integrated Couples Care", desc: "Male and female fertility evaluation and treatment together — IUI, IVF, and ICSI under one roof." },
+      { title: "Onsite Advanced Andrology Lab", desc: "WHO 2021 semen analysis, DNA fragmentation testing, and surgical sperm retrieval (TESA, PESA) on site." },
+      { title: "Experienced Fertility Specialists", desc: "Led by experienced consultants with high success rates and modern assisted-reproduction technology." },
+      { title: "Confidential, Compassionate Support", desc: "Private consultations and personalised plans in a supportive, judgment-free environment." },
+    ],
+  },
+  "Additional Services": {
+    tagline: "Imaging, gynaecology, and supporting specialties — all under one roof.",
+    intro: [
+      "Comprehensive andrology and urology care often requires more than one specialist. Our additional services bring gynaecology, advanced laboratory, imaging, and other supporting specialties into the same building — so patients and families don't have to coordinate care across multiple hospitals.",
+      "From specialist gynaecology and high-resolution imaging to internal medicine, we deliver coordinated multidisciplinary care led by experienced consultants.",
+    ],
+    highlights: [
+      { title: "Specialist Gynaecology", desc: "Comprehensive women's health care alongside our fertility and andrology services." },
       { title: "Specialist Imaging", desc: "High-resolution scrotal doppler, renal/prostate ultrasound, and image-guided procedures by a consultant radiologist." },
-      { title: "Cosmetology & Internal Medicine", desc: "Aesthetic, anti-ageing, and general medicine consultations for complete adult care." },
+      { title: "Internal Medicine", desc: "General medicine consultations and management of diabetes, hypertension, and related conditions." },
+      { title: "Coordinated Multidisciplinary Care", desc: "Supporting specialties under one roof for complete, convenient adult care." },
     ],
   },
 };
@@ -91,8 +114,8 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
   const otherCategories = serviceCategories.filter((c) => c.name !== category);
   const heroImage = getCategoryImage(category);
 
-  // Andrology has a complete pre-designed banner image — render it at full natural aspect with no overlays
-  const useFullBanner = true; // all categories now use full-bleed banner images
+  // Categories with a pre-designed banner render it full-bleed; others use the designed gradient hero
+  const useFullBanner = bannerCategories.has(category);
 
   return (
     <>
@@ -120,19 +143,10 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
         </section>
       ) : (
       /* Hero — full-bleed banner image */
-      <section className="relative min-h-[360px] lg:min-h-[420px] flex items-center overflow-hidden bg-primary-dark">
-        {/* Background image */}
-        <Image
-          src={heroImage}
-          alt={`${category} illustration`}
-          fill
-          sizes="100vw"
-          priority
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
-        {/* Multi-layer overlays for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary-dark/70 to-primary-dark/30 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent z-10" />
+      <section className="relative min-h-[360px] lg:min-h-[420px] flex items-center overflow-hidden bg-gradient-to-br from-primary-dark via-primary to-secondary">
+        {/* Gradient sheen overlays for depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 via-primary-dark/50 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent z-10" />
 
         {/* Decorative blobs */}
         <div className="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-secondary/30 rounded-full blur-3xl z-10 pointer-events-none animate-blob" />
@@ -210,6 +224,7 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
               {category === "Andrology" && "Best Andrology Treatment In Bangalore"}
               {category === "Urology" && "Best Urology Treatment In Bangalore"}
               {category === "Men's Health" && "Best Men's Health Treatment In Bangalore"}
+              {category === "Fertility" && "Best Fertility Treatment In Bangalore"}
               {category === "Additional Services" && `About ${category}`}
             </h2>
             <div className="space-y-5">
@@ -228,11 +243,11 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
                 </div>
                 <div className="flex items-baseline justify-between gap-3 pb-3 border-b border-white/15">
                   <span className="text-sm text-white/80">Years of Experience</span>
-                  <span className="text-2xl font-bold">20+</span>
+                  <span className="text-2xl font-bold">10+</span>
                 </div>
                 <div className="flex items-baseline justify-between gap-3">
                   <span className="text-sm text-white/80">Patients Treated</span>
-                  <span className="text-2xl font-bold">10k+</span>
+                  <span className="text-2xl font-bold">15k+</span>
                 </div>
               </div>
               <a
