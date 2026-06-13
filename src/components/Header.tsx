@@ -238,8 +238,8 @@ export default function Header() {
                     </div>
                   )}
                   {link.megaMenu && isOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[1000px] max-w-[calc(100vw-2rem)] z-50">
-                      <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 animate-fade-in grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[1200px] max-w-[calc(100vw-2rem)] z-50">
+                      <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 animate-fade-in grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                         {link.megaMenu.map((col) => (
                           <div key={col.title}>
                             <Link
