@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import CategoryLanding from "@/components/CategoryLanding";
+import { getCategoryImage } from "@/data/services";
+import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Andrology Treatment in Bangalore | Best Andrology Hospital in Sahakar Nagar | Joshi's Centre",
-  description:
-    "Looking for expert andrology treatment in Bangalore? Joshi's Andrology and Urology Centre in Sahakar Nagar offers advanced care for male infertility, erectile dysfunction, premature ejaculation, low testosterone, prostate issues, and more — by experienced andrologists in a fully confidential setting.",
+  ...pageMetadata({
+    title: "Andrology Treatment in Bangalore | Male Fertility Specialist",
+    description:
+      "Expert andrology treatment in Bangalore for male infertility, erectile dysfunction, low testosterone, men's health, and reproductive health care.",
+    path: "/services/andrology-treatment-in-bangalore/",
+    image: getCategoryImage("Andrology"),
+  }),
   keywords:
     "andrology treatment in Bangalore, best andrology hospital in Bangalore, andrology hospital Sahakar Nagar, male infertility, erectile dysfunction, premature ejaculation, low testosterone, prostate issues",
 };

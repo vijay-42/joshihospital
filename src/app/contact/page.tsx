@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Joshi's Andrology & Urology Centre",
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Joshi Andrology & Urology Centre | Book Appointment Bangalore",
   description:
-    "Contact Joshi's Andrology & Urology Centre in Bengaluru. Book an appointment, call us, or visit our clinic in Sahakara Nagar.",
-};
+    "Contact Joshi Andrology & Urology Centre in Bangalore to book an appointment for urology, andrology, fertility, IVF, kidney stone, and men's health treatment.",
+  path: "/contact/",
+});
 
 export default function ContactPage() {
   return (

@@ -58,7 +58,7 @@ const navLinks: NavLink[] = [
       },
       {
         title: "Fertility",
-        href: "/services/fertility",
+        href: "/services/fertility-treatment-in-bangalore",
         items: [
           { href: "/services/iui-treatment-in-bangalore", label: "IUI Treatment" },
           { href: "/services/icsi-treatment-in-bangalore", label: "ICSI Treatment" },
@@ -91,6 +91,7 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const [bookingOpen, setBookingOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -100,9 +101,14 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(e.target as Node)) {
-        setDropdownOpen(null);
+      const target = e.target as Node;
+      // Ignore presses inside the desktop nav OR the mobile menu — otherwise the
+      // mousedown collapses the open submenu before a sub-link's click can fire,
+      // making mobile sub-service links un-tappable.
+      if (navRef.current?.contains(target) || mobileMenuRef.current?.contains(target)) {
+        return;
       }
+      setDropdownOpen(null);
     };
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") setDropdownOpen(null);
@@ -154,7 +160,7 @@ export default function Header() {
               <a href="https://www.instagram.com/joshis_andrology_and_urology/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-gold transition-colors">
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.069 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85C2.295 5.784 2.569 4.517 3.544 3.542 4.519 2.567 5.786 2.293 7.152 2.231 8.418 2.173 8.798 2.163 12 2.163zm0 1.838c-3.146 0-3.5.012-4.737.069-1.176.054-1.815.249-2.24.413-.563.219-.965.481-1.388.904-.423.423-.685.825-.904 1.388-.164.425-.359 1.064-.413 2.24-.057 1.237-.069 1.591-.069 4.737s.012 3.5.069 4.737c.054 1.176.249 1.815.413 2.24.219.563.481.965.904 1.388.423.423.825.685 1.388.904.425.164 1.064.359 2.24.413 1.237.057 1.591.069 4.737.069s3.5-.012 4.737-.069c1.176-.054 1.815-.249 2.24-.413.563-.219.965-.481 1.388-.904.423-.423.685-.825.904-1.388.164-.425.359-1.064.413-2.24.057-1.237.069-1.591.069-4.737s-.012-3.5-.069-4.737c-.054-1.176-.249-1.815-.413-2.24-.219-.563-.481-.965-.904-1.388-.423-.423-.825-.685-1.388-.904-.425-.164-1.064-.359-2.24-.413-1.237-.057-1.591-.069-4.737-.069zm0 3.131A4.868 4.868 0 1 0 12 16.868 4.868 4.868 0 0 0 12 7.132zm0 8.027A3.16 3.16 0 1 1 12 8.84a3.16 3.16 0 0 1 0 6.319zm6.197-8.232a1.137 1.137 0 1 1-2.275 0 1.137 1.137 0 0 1 2.275 0z" /></svg>
               </a>
-              <a href="https://www.facebook.com/DrJoshi55" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-gold transition-colors">
+              <a href="https://www.facebook.com/joshisandrologyandurologycentre" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-gold transition-colors">
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
               </a>
               <a href="https://www.youtube.com/@JoshisUroAndrologyCenter" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-gold transition-colors">
@@ -309,7 +315,7 @@ export default function Header() {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white animate-fade-in">
+        <div ref={mobileMenuRef} className="lg:hidden border-t border-gray-100 bg-white animate-fade-in max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain">
           <div className="px-4 py-4 space-y-1">
             {/* Book Appointment — appears at top of mobile menu (under hamburger) */}
             <button

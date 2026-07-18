@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { doctors, getDoctor } from "@/data/doctors";
+import { doctors, getDoctor, getDoctorSeo } from "@/data/doctors";
+import { pageMetadata } from "@/lib/seo";
 
 type Params = Promise<{ slug: string }>;
 
@@ -14,10 +15,13 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { slug } = await params;
   const doctor = getDoctor(slug);
   if (!doctor) return { title: "Doctor Not Found" };
-  return {
-    title: `${doctor.name} — ${doctor.title} | Joshi's Centre`,
-    description: doctor.shortBio,
-  };
+  const seo = getDoctorSeo(slug);
+  return pageMetadata({
+    title: seo?.metaTitle ?? `${doctor.name} — ${doctor.title} | Joshi's Centre`,
+    description: seo?.metaDescription ?? doctor.shortBio,
+    path: `/doctors/${slug}/`,
+    image: doctor.image,
+  });
 }
 
 const accentMap = {

@@ -47,7 +47,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.facebook.com/DrJoshi55"
+                href="https://www.facebook.com/joshisandrologyandurologycentre"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#1877f2] flex items-center justify-center text-white/85 hover:text-white transition-all duration-300"
@@ -105,7 +105,7 @@ export default function Footer() {
                 { href: "/services/andrology-treatment-in-bangalore", label: "Andrology" },
                 { href: "/services/urology-treatment-in-bangalore", label: "Urology" },
                 { href: "/services/mens-health", label: "Men's Health" },
-                { href: "/services/fertility", label: "Fertility" },
+                { href: "/services/fertility-treatment-in-bangalore", label: "Fertility" },
                 { href: "/services/additional-services", label: "Additional Services" },
                 { href: "/services", label: "All Services" },
               ].map((service) => (
@@ -182,7 +182,7 @@ export default function Footer() {
           <div className="flex items-center gap-6 text-sm text-white/70">
             <span>Privacy Policy</span>
             <span>Disclaimer</span>
-            <span>Sitemap</span>
+            <Link href="/sitemap" className="hover:text-gold transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>

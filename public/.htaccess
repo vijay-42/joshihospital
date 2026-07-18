@@ -1,0 +1,97 @@
+# ============================================================
+#  Joshi's Andrology & Urology Centre — Apache config
+#  Static export (Next.js output: "export", trailingSlash: true)
+# ============================================================
+
+Options +FollowSymLinks
+RewriteEngine On
+
+# ── Caching: never cache HTML so new deploys are picked up instantly;
+#    cache hashed build assets (JS/CSS/fonts) and images aggressively.
+#    Prevents stale HTML from referencing old /_next chunk filenames
+#    (which 404 after a redeploy and break client-side navigation). ─
+<IfModule mod_headers.c>
+  # HTML documents — always revalidate, and tell crawlers to index/follow
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+    Header set X-Robots-Tag "index, follow"
+  </FilesMatch>
+  # Immutable, content-hashed Next.js build output
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Images / video
+  <FilesMatch "\.(webp|jpg|jpeg|png|svg|gif|ico|mp4)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+# ── Redirect .in domain → .com (single hop, preserves path) ─
+# Matches joshiuroandrology.in and www.joshiuroandrology.in
+RewriteCond %{HTTP_HOST} (^|\.)joshiuroandrology\.in$ [NC]
+RewriteRule ^ https://joshiuroandrology.com%{REQUEST_URI} [L,R=301]
+
+# ── Force HTTPS ─────────────────────────────────────────────
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── Canonical host: non-www (https://joshiuroandrology.com) ─
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# ============================================================
+#  OLD URL → NEW URL 301 REDIRECTS  (mod_rewrite, ordered)
+#  Important old pages map to their best new equivalent; every
+#  other old/unknown path falls through to the homepage below.
+#  [NC] = case-insensitive so old backlinks match any casing.
+# ============================================================
+
+# ── Service pages (direct matches) ──────────────────────────
+RewriteRule ^Erectile-dysfunction-treatment-in-Bangalore/?$            /services/erectile-dysfunction-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^Low-intensity-Ultrasound-Therapy-For-Erectile-Dysfunction/?$ /services/erectile-dysfunction-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^Male-infertility-treatment-in-Bangalore/?$               /services/male-infertility-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^DNA-Fragmentation-Index/?$                               /services/male-infertility-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^Reconstructive-Urological-surgery-treatment-bangalore/?$ /services/reconstructive-urology-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^(Urinary-Tract-Malignancy|Testicular-Cancer)/?$         /services/urological-cancers-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^Urinary-Tract-Infections-treatment-bangalore/?$         /services/urinary-tract-infection-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^(Prostate-issues|Prostate-disease-treatment-bangalore)/?$ /services/prostate-disorders-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^(Testicular-pain|Testicular-treatment-bangalore)/?$     /services/testicular-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^(Kidney-Stone|Kidney-Stones)/?$                         /services/kidney-stone-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^penile-issues-treatment-bangalore/?$                     /services/penile-prosthesis-reconstruction-in-bangalore/ [NC,L,R=301]
+RewriteRule ^Androgen-deficiency-treatment-bangalore/?$               /services/low-testosterone/ [NC,L,R=301]
+RewriteRule ^Advance-Semen-Analysis/?$                                /services/advanced-semen-analysis-in-bangalore/ [NC,L,R=301]
+
+# ── Category / overview pages (nearest match) ───────────────
+# Old fertility category URL → new SEO slug (exact match only, $ anchor so it
+# does NOT catch /services/fertility-treatment-in-bangalore/ itself)
+RewriteRule ^services/fertility/?$                                    /services/fertility-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^Urology/?$                                               /services/urology-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^Uroflowmetry-treatment-bangalore/?$                      /services/urology-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^urinary-tract-obstruction/?$                             /services/urology-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^Andrologist/?$                                           /services/andrology-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^Male-Sexual-Health(-[0-9]+)?/?$                          /services/andrology-treatment-in-bangalore/ [NC,L,R=301]
+RewriteRule ^(Laboratory-Services|Ultrasound-scan-center-bangalore)/?$ /services/additional-services/ [NC,L,R=301]
+RewriteRule ^Mens-Health-What-every-man-needs-to-know/?$              /services/mens-health/ [NC,L,R=301]
+RewriteRule ^Core-Focus/?$                                            /services/ [NC,L,R=301]
+
+# ── People ──────────────────────────────────────────────────
+RewriteRule ^(Dr-Praveen-Joshi|Articles-By-Dr-Praveen-Joshi)/?$       /doctors/dr-praveen-joshi/ [NC,L,R=301]
+
+# ── Site / info pages (nearest match) ───────────────────────
+RewriteRule ^(Contact-Us|OPD-Consultations)/?$                        /contact/ [NC,L,R=301]
+RewriteRule ^(Overview|Track-Record|testimonials|videos|rguhs-affiliated-fellowship-for-andrology-and-mens-health)/?$ /about/ [NC,L,R=301]
+
+# ============================================================
+#  CATCH-ALL: every other old / unknown path → HOMEPAGE
+#  Real files and pages (which exist on disk) are served as-is;
+#  anything that does NOT exist 301-redirects to the homepage.
+# ============================================================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ / [L,R=301]
+
+# ── Custom 404 page (fallback; rarely reached now) ──────────
+ErrorDocument 404 /404.html
+
+# Note: /sitemap/ is a real page and /sitemap.xml a real file, so
+# both are served directly and skip the catch-all above.

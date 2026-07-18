@@ -18,7 +18,7 @@ const categorySlugs: Record<ServiceCategory, string> = {
   "Andrology": "andrology-treatment-in-bangalore",
   "Urology": "urology-treatment-in-bangalore",
   "Men's Health": "mens-health",
-  "Fertility": "fertility",
+  "Fertility": "fertility-treatment-in-bangalore",
   "Additional Services": "additional-services",
 };
 
@@ -27,8 +27,26 @@ const bannerCategories = new Set<ServiceCategory>([
   "Andrology",
   "Urology",
   "Men's Health",
+  "Fertility",
   "Additional Services",
 ]);
+
+// Banners whose artwork has NO baked-in text — we overlay a heading + tagline
+// on the blank left side (matching the navy/purple style of the other banners).
+const bannerOverlay: Partial<
+  Record<ServiceCategory, { line1: string; line2: string; tagline: string }>
+> = {
+  "Urology": {
+    line1: "Urology",
+    line2: "Treatment",
+    tagline: "Expert care for kidney, bladder, prostate and urinary health.",
+  },
+  "Fertility": {
+    line1: "Fertility",
+    line2: "Treatment",
+    tagline: "Complete fertility care for couples — advanced treatments under one roof.",
+  },
+};
 
 const categoryDetails: Record<ServiceCategory, {
   tagline: string;
@@ -116,6 +134,7 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
 
   // Categories with a pre-designed banner render it full-bleed; others use the designed gradient hero
   const useFullBanner = bannerCategories.has(category);
+  const overlay = bannerOverlay[category];
 
   return (
     <>
@@ -138,8 +157,23 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
             height={941}
             sizes="100vw"
             priority
-            className="block w-full h-auto"
+            className="block w-full h-auto max-h-[140px] sm:max-h-[180px] lg:max-h-[220px] object-cover object-center"
           />
+          {/* Text overlay for banners whose artwork has no baked-in heading — laid out horizontally to fit the shorter banner */}
+          {overlay && (
+            <div className="absolute inset-y-0 left-0 z-10 flex items-center pointer-events-none">
+              <div className="pl-5 sm:pl-10 lg:pl-16 xl:pl-24 pr-4 flex items-center gap-3 sm:gap-6 max-w-full">
+                <h1 className="font-bold leading-none tracking-tight whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+                  <span className="text-primary">{overlay.line1}</span>{" "}
+                  <span className="text-secondary">{overlay.line2}</span>
+                </h1>
+                <span className="hidden sm:block h-6 md:h-8 w-px bg-gradient-to-b from-primary to-secondary shrink-0" />
+                <p className="hidden sm:block text-text-light leading-snug text-xs md:text-sm lg:text-base max-w-xs">
+                  {overlay.tagline}
+                </p>
+              </div>
+            </div>
+          )}
         </section>
       ) : (
       /* Hero — full-bleed banner image */

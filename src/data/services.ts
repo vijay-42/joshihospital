@@ -1199,6 +1199,167 @@ export const services: Service[] = [
   },
 ];
 
+// SEO meta titles & descriptions per service detail page, keyed by slug.
+// Sourced from the centre's SEO sheet; used by generateMetadata with a
+// sensible fallback for any slug not listed here.
+export type ServiceSeo = { metaTitle: string; metaDescription: string };
+
+export const serviceSeo: Record<string, ServiceSeo> = {
+  // ─── Andrology ───
+  "erectile-dysfunction-treatment-in-bangalore": {
+    metaTitle: "Erectile Dysfunction Treatment in Bangalore | ED Specialist",
+    metaDescription:
+      "Get expert erectile dysfunction treatment in Bangalore. Consult experienced ED specialists for diagnosis, advanced treatment, and men's health care.",
+  },
+  "male-infertility-treatment-in-bangalore": {
+    metaTitle: "Male Infertility Treatment in Bangalore | Male Fertility Specialist",
+    metaDescription:
+      "Consult Bangalore's leading male fertility specialist for infertility treatment, low sperm count, sperm health evaluation, and fertility solutions. Joshi Andrology & Urology Centre.",
+  },
+  "delayed-ejaculation-treatment-in-bangalore": {
+    metaTitle: "Delayed Ejaculation Treatment in Bangalore - Delayed Ejaculation Specialist",
+    metaDescription:
+      "Looking for delayed ejaculation treatment in Bangalore? Get expert care, accurate diagnosis, and effective treatment at Joshi Andrology & Urology Centre in Sahakar Nagar, Bangalore.",
+  },
+  "penile-prosthesis-reconstruction-in-bangalore": {
+    metaTitle: "Penile Prosthesis Surgery in Bangalore - Penile Implant Specialist",
+    metaDescription:
+      "Advanced penile implant surgery in Bangalore for erectile dysfunction. Trusted penile prosthesis & penile implant surgery specialists at Joshi Andrology & Urology Centre.",
+  },
+  "penile-enlargement-surgery-in-bangalore": {
+    metaTitle: "Penis Enlargement Surgery In Bangalore - Penile Lengthening Surgery Specialists",
+    metaDescription:
+      "Looking for penis enlargement surgery in Bangalore? Expert penile lengthening surgery specialists offering safe, confidential treatment at Joshi Andrology & Urology Centre.",
+  },
+  "testicular-treatment-in-bangalore": {
+    metaTitle: "Testicular Pain Treatment in Bangalore - Testicular Cancer Specialist",
+    metaDescription:
+      "Expert treatment for testicular pain, swelling, lumps, and testicular disorders in Bangalore. Consult trusted testicular cancer specialists today at Joshi Andrology & Urology Centre.",
+  },
+
+  // ─── Urology ───
+  "kidney-stone-treatment-in-bangalore": {
+    metaTitle: "Kidney Stone Treatment in Bangalore - Kidney Stone Specialist",
+    metaDescription:
+      "Suffering from kidney stones? Get advanced laser kidney stone treatment in Bangalore. Expert diagnosis, treatment, and recovery at Joshi Andrology & Urology Centre.",
+  },
+  "prostate-disorders-treatment-in-bangalore": {
+    metaTitle: "Prostate Disorders Treatment in Bangalore - Enlarged Prostate Treatment Specialists",
+    metaDescription:
+      "Looking for prostate treatment in Bangalore? Get expert care for enlarged prostate (BPH), urinary problems, prostate infections, and prostate disorders. Joshi Andrology & Urology Centre.",
+  },
+  "reconstructive-urology-treatment-in-bangalore": {
+    metaTitle: "Reconstructive Urology Treatment in Bangalore - Reconstructive Urologist Bangalore",
+    metaDescription:
+      "Get expert reconstructive urology treatment in Bangalore for urethral stricture, urinary tract reconstruction, and complex urological conditions at Joshi Andrology & Urology Centre.",
+  },
+  "urinary-tract-infection-treatment-in-bangalore": {
+    metaTitle: "Urinary Tract Infection Treatment In Bangalore - Best UTI Specialist Hospital",
+    metaDescription:
+      "Suffering from frequent UTIs? Get advanced urinary tract infection treatment in Bangalore from expert urologists at Joshi Andrology & Urology Centre.",
+  },
+  "urological-cancers-treatment-in-bangalore": {
+    metaTitle: "Urological Cancer Treatment in Bangalore - Urology Cancer Specialist",
+    metaDescription:
+      "Get expert urological cancer treatment in Bangalore for prostate, bladder, kidney, and testicular cancers. Consult specialists at Joshi Andrology & Urology Centre.",
+  },
+  "urinary-incontinence-treatment-in-bangalore": {
+    metaTitle: "Urinary Incontinence Treatment in Bangalore - Urinary Incontinence Specialist",
+    metaDescription:
+      "Expert urinary incontinence treatment in Bangalore. Consult specialists for bladder control problems, urinary leakage, and advanced urology care. Joshi's Andrology & Urology Centre.",
+  },
+
+  // ─── Men's Health ───
+  "low-testosterone": {
+    metaTitle: "Low Testosterone Treatment in Bangalore | Joshi's Andrology & Urology Centre",
+    metaDescription:
+      "Get expert low testosterone treatment in Bangalore. Consult specialists for low testosterone symptoms, hormone imbalance, men's health and fertility care.",
+  },
+  "prostate-health": {
+    metaTitle: "Prostate Treatment in Bangalore | Joshi Andrology & Urology Centre",
+    metaDescription:
+      "Get expert prostate treatment in Bangalore for enlarged prostate, BPH, prostatitis, urinary problems, and prostate disorders at Joshi Andrology & Urology Centre.",
+  },
+  "preventive-cardiology": {
+    metaTitle: "Preventive Cardiology in Bangalore | Joshi Andrology & Urology Centre",
+    metaDescription:
+      "Expert preventive cardiology in Bangalore at Joshi Andrology & Urology Centre. Heart health screening, cardiac risk assessment, lifestyle guidance, and early heart disease prevention.",
+  },
+  "diabetes-hypertension": {
+    metaTitle: "Diabetes & Hypertension Treatment in Bangalore",
+    metaDescription:
+      "Expert diabetes and hypertension treatment in Bangalore. Manage blood sugar, high BP, erectile dysfunction, and men's health with specialist care at Joshi Andrology & Urology Centre.",
+  },
+  "cosmetology-for-men": {
+    metaTitle: "Cosmetology for Men in Bangalore | Joshi Andrology & Urology Centre",
+    metaDescription:
+      "Get advanced cosmetology treatments for men including PRP hair therapy, skin rejuvenation, anti-aging and grooming solutions in Bangalore.",
+  },
+  "psychiatry-counselling": {
+    metaTitle: "Best Psychiatrist & Counselling Services in Bangalore",
+    metaDescription:
+      "Looking for a psychiatrist in Bangalore? Get expert counselling, anxiety treatment, depression care, stress management, and mental health support.",
+  },
+
+  // ─── Fertility ───
+  "iui-treatment-in-bangalore": {
+    metaTitle: "Best IUI Treatment in Bangalore - IUI Specialist Bangalore",
+    metaDescription:
+      "Looking for IUI treatment in Bangalore? Joshi Andrology & Urology Centre offers expert fertility care, IUI procedures, and personalized treatment plans.",
+  },
+  "icsi-treatment-in-bangalore": {
+    metaTitle: "Best ICSI Treatment in Bangalore - ICSI Specialists",
+    metaDescription:
+      "Looking for ICSI treatment in Bangalore? Joshi Andrology & Urology Centre offers advanced fertility care, male infertility treatment, and expert ICSI solutions.",
+  },
+  "ivf-treatment-in-bangalore": {
+    metaTitle: "Best IVF Treatment in Bangalore - IVF Hospital in Bangalore",
+    metaDescription:
+      "Start your parenthood journey with expert IVF treatment in Bangalore. Get personalized fertility care and advanced infertility solutions at Joshi's Andrology & Urology Centre.",
+  },
+  "tesa-treatment-in-bangalore": {
+    metaTitle: "TESA Treatment in Bangalore | Testicular Sperm Aspiration | Male Infertility Treatment",
+    metaDescription:
+      "Looking for TESA Treatment in Bangalore? Joshi Andrology and Urology Centre offers advanced Testicular Sperm Aspiration (TESA), sperm retrieval procedures, IVF support, and expert male infertility treatment.",
+  },
+  "pesa-treatment-in-bangalore": {
+    metaTitle: "Best PESA Treatment in Bangalore | PESA for Male Infertility | Joshi Andrology",
+    metaDescription:
+      "Looking for the best PESA treatment in Bangalore? Joshi Andrology and Urology Centre offers advanced PESA procedures for male infertility, obstructive azoospermia, and IVF sperm retrieval. Book a consultation today.",
+  },
+  "sperm-retrieval-treatment-in-bangalore": {
+    metaTitle: "Sperm Retrieval Treatment in Bangalore | PESA, TESE & Male Fertility Specialist",
+    metaDescription:
+      "Looking for Sperm Retrieval Treatment in Bangalore? Joshi Andrology and Urology Centre offers PESA, TESE, and advanced sperm retrieval techniques for azoospermia and male infertility. Book a consultation today.",
+  },
+  "advanced-semen-analysis-in-bangalore": {
+    metaTitle: "Best Semen Analysis Test in Bangalore - Advanced Semen Analysis",
+    metaDescription:
+      "Looking for a semen analysis test in Bangalore? Get advanced sperm testing, fertility evaluation, and male infertility diagnosis at Joshi's Andrology & Urology Centre.",
+  },
+
+  // ─── Additional Services ───
+  "best-gynaecology-hospital-in-bangalore": {
+    metaTitle: "Best Gynaecology Hospital in Bangalore | Joshi Andrology & Urology",
+    metaDescription:
+      "Visit Joshi Andrology & Urology Centre, a trusted gynaecology hospital in Bangalore offering women's health, fertility care, IVF support, pregnancy and gynecological treatments.",
+  },
+  "best-radiology-hospital-in-bangalore": {
+    metaTitle: "Best Radiology Hospital in Bangalore | Joshi Andrology & Urology",
+    metaDescription:
+      "Looking for the best radiology hospital in Bangalore? Get expert ultrasound, diagnostic imaging, and radiology services at Joshi Andrology & Urology Centre.",
+  },
+  "internal-medicine": {
+    metaTitle: "Internal Medicine Specialist in Bangalore | Joshi Andrology & Urology Centre",
+    metaDescription:
+      "Expert Internal Medicine Specialist in Bangalore for diabetes, hypertension, infections, preventive health checkups, and chronic disease management at Joshi Andrology & Urology Centre.",
+  },
+};
+
+export function getServiceSeo(slug: string): ServiceSeo | undefined {
+  return serviceSeo[slug];
+}
+
 export function getService(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
 }
@@ -1211,7 +1372,7 @@ export const serviceCategories: { name: ServiceCategory; accent: "primary" | "se
   { name: "Andrology", accent: "secondary", description: "Male reproductive and sexual health", image: "/services/andrologybanner.webp" },
   { name: "Urology", accent: "primary", description: "Comprehensive urinary tract care", image: "/services/urologybanner.webp" },
   { name: "Men's Health", accent: "accent", description: "Holistic wellness for men", image: "/services/menshealthbanner.webp" },
-  { name: "Fertility", accent: "secondary", description: "Complete fertility care for couples", image: "/services/additionalservicesbanner.webp" },
+  { name: "Fertility", accent: "secondary", description: "Complete fertility care for couples", image: "/services/fertilitybanner.webp" },
   { name: "Additional Services", accent: "gold", description: "Imaging, gynaecology, and supporting care", image: "/services/additionalservicesbanner.webp" },
 ];
 

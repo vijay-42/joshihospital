@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { services, getService, getServicesByCategory, getServiceImage } from "@/data/services";
+import { services, getService, getServiceSeo, getServicesByCategory, getServiceImage } from "@/data/services";
+import { pageMetadata } from "@/lib/seo";
 
 type Params = Promise<{ slug: string }>;
 
@@ -14,10 +15,13 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { slug } = await params;
   const service = getService(slug);
   if (!service) return { title: "Service Not Found" };
-  return {
-    title: `${service.title} | Joshi's Andrology & Urology Centre`,
-    description: service.shortDescription,
-  };
+  const seo = getServiceSeo(slug);
+  return pageMetadata({
+    title: seo?.metaTitle ?? `${service.title} | Joshi's Andrology & Urology Centre`,
+    description: seo?.metaDescription ?? service.shortDescription,
+    path: `/services/${slug}/`,
+    image: getServiceImage(service),
+  });
 }
 
 const accentMap = {
@@ -40,7 +44,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
   return (
     <>
       {/* Hero — banner with content overlay on top */}
-      <section className="relative bg-white overflow-hidden flex items-center min-h-[340px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[460px] xl:min-h-[520px]">
+      <section className="relative bg-white overflow-hidden flex items-center min-h-[170px] sm:min-h-[190px] md:min-h-[210px] lg:min-h-[230px] xl:min-h-[260px]">
         {/* Background layer: image OR gradient fallback */}
         {hasBannerImage ? (
           <Image
@@ -80,81 +84,40 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
           All Services
         </Link>
 
-        {/* Content overlay */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12 lg:py-14 grid lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7">
-            <div
-              className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-5 border ${
-                hasBannerImage
-                  ? `${a.bg} ${a.text} ${a.border}`
-                  : "bg-white/15 backdrop-blur-md text-white border-white/25"
-              }`}
-            >
-              <svg className={`w-3.5 h-3.5 ${hasBannerImage ? a.text : "text-gold"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
-              </svg>
-              {service.category}
+        {/* Content overlay — two-column grid keeps the title block and description centered on the same axis */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-5 lg:py-6 w-full">
+          <div className="grid md:grid-cols-2 items-center gap-x-10 gap-y-2">
+            {/* Badge + title */}
+            <div>
+              <div
+                className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest border mb-2 ${
+                  hasBannerImage
+                    ? `${a.bg} ${a.text} ${a.border}`
+                    : "bg-white/15 backdrop-blur-md text-white border-white/25"
+                }`}
+              >
+                <svg className={`w-3 h-3 ${hasBannerImage ? a.text : "text-gold"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
+                </svg>
+                {service.category}
+              </div>
+
+              <h1
+                className={`text-xl md:text-2xl lg:text-3xl font-bold leading-[1.2] tracking-tight ${
+                  hasBannerImage ? "text-text" : "text-white drop-shadow-lg"
+                }`}
+              >
+                {service.title}
+              </h1>
             </div>
 
-            <h1
-              className={`text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight ${
-                hasBannerImage ? "text-text" : "text-white drop-shadow-lg"
-              }`}
-            >
-              {service.title}
-            </h1>
-
             <p
-              className={`mt-4 text-base md:text-lg leading-relaxed max-w-2xl ${
+              className={`hidden md:block line-clamp-3 text-sm lg:text-base leading-relaxed ${
                 hasBannerImage ? "text-text-light" : "text-white/90"
               }`}
             >
               {service.shortDescription}
             </p>
-
-            {/* Feature pills */}
-            <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-2 max-w-xl">
-              {service.whyChooseUs.slice(0, 4).map((point) => (
-                <div
-                  key={point}
-                  className={`rounded-xl px-3 py-2 text-[11px] md:text-xs font-semibold leading-snug ${
-                    hasBannerImage
-                      ? "bg-white/85 backdrop-blur border border-gray-200 text-text shadow-sm"
-                      : "bg-white/12 backdrop-blur-md border border-white/20 text-white/95"
-                  }`}
-                >
-                  <div className="flex items-start gap-1.5">
-                    <svg
-                      className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${hasBannerImage ? a.text : "text-gold"}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>{point}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Trust pill */}
-            <div
-              className={`mt-6 inline-flex items-center gap-3 rounded-full pl-2 pr-5 py-2 shadow-lg ${
-                hasBannerImage
-                  ? `bg-gradient-to-r ${a.grad} text-white`
-                  : "bg-white/15 backdrop-blur-md border border-white/25 text-white"
-              }`}
-            >
-              <span className="w-9 h-9 rounded-full bg-gold flex items-center justify-center shrink-0">
-                <svg className="w-4 h-4 text-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </span>
-              <span className="text-xs md:text-sm font-semibold tracking-wide">
-                Trusted, confidential care &mdash; tailored to you.
-              </span>
-            </div>
           </div>
         </div>
       </section>

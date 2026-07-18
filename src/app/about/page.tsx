@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us | Joshi's Andrology & Urology Centre",
+export const metadata: Metadata = pageMetadata({
+  title: "About Joshi Andrology & Urology Centre | Best Urology Hospital Bangalore",
   description:
-    "Meet our team of specialist doctors led by Dr. Praveen Joshi. Learn about our centre's mission, values, and track record of 15,000+ patients.",
-};
+    "Learn about Joshi Andrology & Urology Centre, a trusted hospital in Bangalore offering expert urology, andrology, male infertility, fertility, IVF, and men's health care.",
+  path: "/about/",
+});
 
 const doctors = [
   {

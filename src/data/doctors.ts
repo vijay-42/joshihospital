@@ -181,3 +181,42 @@ export const doctors: Doctor[] = [
 export function getDoctor(slug: string): Doctor | undefined {
   return doctors.find((d) => d.slug === slug);
 }
+
+export type DoctorSeo = { metaTitle: string; metaDescription: string };
+
+export const doctorSeo: Record<string, DoctorSeo> = {
+  "dr-praveen-joshi": {
+    metaTitle: "Best Andrologist in Bangalore - Sexual Health Specialist for Men Bangalore",
+    metaDescription:
+      "Consult Dr. Praveen Joshi, the best andrologist in Bangalore and a trusted Uro-Andrologist specializing in male infertility, men's sexual health, fertility, andrology, and advanced urology care.",
+  },
+  "dr-sai-dilip-sriramula": {
+    metaTitle: "Best Urologist & Uro-Andrologist in Bangalore - Urology Specialist Doctor in Bangalore",
+    metaDescription:
+      "Dr. Sai Dilip Sriramula is a leading Urologist and Uro-Andrologist in Bangalore, specializing in kidney stone treatment, men's health, male infertility, and urology care.",
+  },
+  "dr-amit-kamat": {
+    metaTitle: "Best General Physician in Bangalore | Dr. Amit Kamat | Joshi's Center",
+    metaDescription:
+      "Book an appointment with Dr. Amit Kamat, an experienced General Physician in Bangalore, offering preventive healthcare, diagnosis, treatment, and personalized medical care.",
+  },
+  "dr-bharathi-rajanna": {
+    metaTitle: "Best Gynaecologist & Fertility Specialist Doctor in Bangalore - Joshi's Center",
+    metaDescription:
+      "Meet Dr. Bharathi Rajanna, trusted Obstetrician, Gynaecologist and Fertility Specialist in Bangalore offering pregnancy care, infertility treatment, IVF guidance, and women's healthcare.",
+  },
+  "dr-priyanka": {
+    metaTitle: "Fertility Specialist in Bangalore - IVF Doctor In Bangalore",
+    metaDescription:
+      "Consult Dr. Priyanka, a trusted Fertility Specialist in Bangalore and IVF Doctor in Bangalore, offering fertility evaluation, infertility treatment, IVF guidance, and personalized care.",
+  },
+  "dr-chandrakanth": {
+    metaTitle: "General Surgery Specialist in Bangalore - Best General Surgeon",
+    metaDescription:
+      "Meet Dr. Chandrakanth, a skilled General Surgery Specialist in Bangalore providing advanced surgical treatment, expert consultation, and compassionate patient care.",
+  },
+};
+
+export function getDoctorSeo(slug: string): DoctorSeo | undefined {
+  return doctorSeo[slug];
+}

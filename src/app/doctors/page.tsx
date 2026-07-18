@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { doctors } from "@/data/doctors";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Our Doctors | Joshi's Andrology & Urology Centre",
   description:
     "Meet the multidisciplinary team at Joshi's Andrology & Urology Centre — expert urologists, andrologists, oncologists, fertility specialists, and counselors.",
-};
+  path: "/doctors/",
+});
 
 const accentMap = {
   primary: { bg: "bg-primary-light", text: "text-primary", border: "border-primary/20", grad: "from-primary to-primary-dark" },

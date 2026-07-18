@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { serviceCategories, getServicesByCategory } from "@/data/services";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Services | Joshi's Andrology & Urology Centre",
+export const metadata: Metadata = pageMetadata({
+  title: "Best Uro-Andrology & Fertility Services in Bangalore - Joshi Andrology & Urology Centre",
   description:
-    "Integrated andrology, urology, men's health and additional services — comprehensive care under one roof at Joshi's Andrology & Urology Centre, Bengaluru.",
-};
+    "Expert treatment for male infertility, IVF treatment, kidney stones, sexual health, fertility, and urological conditions at Joshi Andrology & Urology Centre.",
+  path: "/services/",
+});
 
 const accentMap = {
   primary: { bg: "bg-primary-light", text: "text-primary", border: "border-primary/20", grad: "from-primary to-primary-dark", solid: "bg-primary" },

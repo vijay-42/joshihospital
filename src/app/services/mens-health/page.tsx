@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import CategoryLanding from "@/components/CategoryLanding";
+import { getCategoryImage } from "@/data/services";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Men's Health | Joshi's Andrology & Urology Centre",
+export const metadata: Metadata = pageMetadata({
+  title: "Men's Health Specialist in Bangalore | Joshi's Andrology & Urology Centre",
   description:
-    "Holistic men's health programs — low testosterone, prostate health, preventive cardiology, diabetes & hypertension management, counselling, and wellness.",
-};
+    "Leading men's health clinic in Bangalore offering erectile dysfunction treatment, male infertility care, sexual health services, andrology, and urology solutions.",
+  path: "/services/mens-health/",
+  image: getCategoryImage("Men's Health"),
+});
 
 export default function MensHealthPage() {
   return <CategoryLanding category="Men's Health" />;
