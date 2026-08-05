@@ -130,18 +130,17 @@ const categoryDetails: Record<ServiceCategory, {
     ],
   },
   "Fertility": {
-    tagline: "Personalised fertility care for couples — advanced treatments under one roof.",
+    tagline: "Complete fertility care for couples — advanced treatments under one roof.",
     intro: [
-      "Starting a family is a cherished dream, but difficulties in conceiving can bring emotional stress and uncertainty. At Joshi's Andrology and Urology Centre in Sahakar Nagar, Bangalore, our dedicated fertility programme helps couples identify the underlying causes of infertility and receive effective, personalised care — bringing male and female reproductive care, advanced laboratory diagnostics, and assisted reproduction together in one place.",
-      "Recognised as one of the leading fertility clinics in Bangalore, we begin every fertility journey with a thorough assessment of both partners. Fertility challenges can arise from male factors, female factors, hormonal imbalances, lifestyle habits, age-related issues, or unexplained infertility — and based on the findings, our experienced consultants recommend the most suitable plan, from IUI and IVF to ICSI, to maximise the chance of a successful pregnancy.",
-      "Early evaluation makes a real difference. Consider seeing a specialist if you've been trying to conceive for over 12 months (or over 6 months if the woman is above 35), have irregular menstrual cycles, known reproductive conditions, repeated miscarriages, hormonal disorders, or male-factor concerns such as low sperm count, poor motility, or erectile dysfunction.",
-      "We understand how emotional and personal this journey is. Our team offers compassionate, judgment-free care with clear guidance and complete cost transparency at every step — because each case is unique, we discuss the most suitable options and estimated costs during your consultation, so you can make informed decisions with confidence.",
+      "Starting a family can be challenging, but you don't have to face it alone. At Joshi's Andrology and Urology Hospital in Sahakar Nagar, Bangalore, our dedicated fertility programme brings together male and female reproductive care, advanced laboratory diagnostics, and assisted reproduction — all in one place.",
+      "From your first evaluation to advanced treatments like IUI, IVF, and ICSI, our experienced consultants design a personalised plan based on the underlying cause. With onsite WHO-standard semen analysis, surgical sperm retrieval (TESA, PESA), and coordinated female fertility care, couples receive seamless, confidential support throughout their journey.",
+      "We understand how emotional and personal this journey is. Our team offers compassionate, judgment-free care with clear guidance at every step — helping you make informed decisions and giving you the best possible chance of a successful pregnancy.",
     ],
     highlights: [
-      { title: "Accurate Diagnosis for Both Partners", desc: "Advanced fertility testing — onsite WHO 2021 semen analysis, DNA fragmentation, and surgical sperm retrieval (TESA, PESA) — pinpoints the root cause for targeted treatment." },
-      { title: "Personalised Treatment Plans", desc: "Every patient is unique. IUI, IVF, and ICSI protocols are tailored to individual health, diagnosis, and fertility goals for the best chance of conception." },
-      { title: "Comprehensive Care, Under One Roof", desc: "Integrated male and female fertility care with complete support from diagnosis through treatment and follow-up — no coordinating across hospitals." },
-      { title: "Ethical, Transparent & Compassionate", desc: "Experienced specialists, evidence-based care, and honest cost guidance in a private, supportive, judgment-free environment." },
+      { title: "Integrated Couples Care", desc: "Male and female fertility evaluation and treatment together — IUI, IVF, and ICSI under one roof." },
+      { title: "Onsite Advanced Andrology Lab", desc: "WHO 2021 semen analysis, DNA fragmentation testing, and surgical sperm retrieval (TESA, PESA) on site." },
+      { title: "Experienced Fertility Specialists", desc: "Led by experienced consultants with high success rates and modern assisted-reproduction technology." },
+      { title: "Confidential, Compassionate Support", desc: "Private consultations and personalised plans in a supportive, judgment-free environment." },
     ],
     faqs: [
       { q: "What is fertility treatment and who may need it?", a: "Fertility treatment in Bangalore is recommended for couples who have been unable to conceive after 12 months of regular, unprotected intercourse (or after 6 months if the woman is over 35). Treatment depends on the underlying cause and may include medication, IUI, IVF, ICSI, or other advanced fertility procedures." },

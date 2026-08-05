@@ -115,7 +115,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold text-text mb-6">{service.title}</h2>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-text mb-6">{service.title}</h2>
               <div className="space-y-5">
                 {service.longDescription.map((para, i) => (
                   <p key={i} className="text-text-light leading-relaxed text-base text-justify">

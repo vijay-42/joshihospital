@@ -13,6 +13,7 @@ export type Doctor = {
   languages: string[];
   registration?: string;
   accent: "primary" | "secondary" | "accent";
+  bioHeading?: string;
   faqs?: { q: string; a: string }[];
 };
 
@@ -77,6 +78,7 @@ export const doctors: Doctor[] = [
     languages: ["English", "Hindi", "Telugu", "Kannada"],
     registration: "Karnataka Medical Council — KMC 193018",
     accent: "primary",
+    bioHeading: "Best Urology Doctor in Bangalore",
     faqs: [
       { q: "When should I consult a urology specialist in Bangalore?", a: "You should consult a urology specialist in Bangalore if you experience symptoms such as kidney stones, blood in the urine, frequent urination, urinary tract infections, prostate problems, bladder issues, or difficulty passing urine. Early diagnosis can help prevent complications and improve treatment outcomes." },
       { q: "What conditions does a urology doctor in Bangalore treat?", a: "A urology doctor in Bangalore treats conditions affecting the urinary tract and male reproductive system, including kidney stones, enlarged prostate, urinary tract infections (UTIs), bladder disorders, urinary incontinence, urological cancers, and male reproductive health concerns." },
