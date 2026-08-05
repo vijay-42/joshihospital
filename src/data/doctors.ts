@@ -13,6 +13,7 @@ export type Doctor = {
   languages: string[];
   registration?: string;
   accent: "primary" | "secondary" | "accent";
+  faqs?: { q: string; a: string }[];
 };
 
 export const doctors: Doctor[] = [
@@ -62,8 +63,9 @@ export const doctors: Doctor[] = [
     shortBio:
       "Consultant urologist trained in advanced endoscopic stone management, BPH surgery, and reconstructive urology — supporting comprehensive urological care at Joshi's Centre.",
     fullBio: [
-      "Dr. Sai Dilip Sriramula is a consultant urologist with MCh-level super-specialty training in urology. He works alongside Dr. Praveen Joshi to handle the full range of urological conditions — from kidney stones and prostate disorders to bladder dysfunction and urological cancers.",
-      "His clinical interests include endoscopic stone surgery (URS, RIRS, PCNL), laser prostate procedures, and reconstructive urology. He is committed to evidence-based, patient-first care with clear communication at every step.",
+      "Dr. Sai Dilip Sriramula is a consultant urologist with MCh-level super-specialty training in urology. Recognised as a urology specialist in Bangalore, he works alongside Dr. Praveen Joshi to provide comprehensive care for a wide range of urological conditions, including kidney stones, prostate disorders, bladder dysfunction, urinary tract conditions, and urological cancers.",
+      "His clinical expertise includes endoscopic stone surgeries such as URS, RIRS, and PCNL, laser prostate procedures, and reconstructive urology. As a Uro-Andrologist Specialist in Bangalore, he is committed to evidence-based, patient-centred care with clear communication and individualised treatment plans.",
+      "Patients looking for a urology doctor in Bangalore often seek experienced specialists who provide accurate diagnosis, advanced treatment options, and compassionate care. Dr. Sai Dilip Sriramula focuses on delivering high-quality urological care tailored to each patient's needs.",
     ],
     specialties: ["Kidney Stones", "BPH / Prostate Surgery", "Urological Cancers", "Reconstructive Urology"],
     expertise: [
@@ -75,6 +77,18 @@ export const doctors: Doctor[] = [
     languages: ["English", "Hindi", "Telugu", "Kannada"],
     registration: "Karnataka Medical Council — KMC 193018",
     accent: "primary",
+    faqs: [
+      { q: "When should I consult a urology specialist in Bangalore?", a: "You should consult a urology specialist in Bangalore if you experience symptoms such as kidney stones, blood in the urine, frequent urination, urinary tract infections, prostate problems, bladder issues, or difficulty passing urine. Early diagnosis can help prevent complications and improve treatment outcomes." },
+      { q: "What conditions does a urology doctor in Bangalore treat?", a: "A urology doctor in Bangalore treats conditions affecting the urinary tract and male reproductive system, including kidney stones, enlarged prostate, urinary tract infections (UTIs), bladder disorders, urinary incontinence, urological cancers, and male reproductive health concerns." },
+      { q: "Who should consult a Uro-Andrologist Specialist in Bangalore?", a: "A Uro-Andrologist Specialist in Bangalore is the right specialist for men experiencing erectile dysfunction, male infertility, low testosterone, premature ejaculation, Peyronie's disease, or other conditions affecting male reproductive and sexual health." },
+      { q: "What is the difference between a urology specialist and a uro-andrologist specialist?", a: "A urology specialist focuses on diseases of the urinary tract in both men and women, while a Uro-Andrologist Specialist has additional expertise in diagnosing and treating male reproductive and sexual health conditions alongside urological disorders." },
+      { q: "How do I choose the right urology doctor in Bangalore?", a: "When choosing a urology doctor in Bangalore, consider the doctor's qualifications, experience, areas of expertise, available treatment options, diagnostic facilities, patient reviews, and the hospital's reputation for providing comprehensive urological care." },
+      { q: "Can a urology specialist in Bangalore treat kidney stones without open surgery?", a: "Yes. A urology specialist in Bangalore may recommend minimally invasive procedures such as URS (Ureteroscopy), RIRS (Retrograde Intrarenal Surgery), or PCNL (Percutaneous Nephrolithotomy), depending on the size, location, and type of kidney stone." },
+      { q: "When should I visit a urology doctor in Bangalore for prostate problems?", a: "If you experience difficulty urinating, weak urine flow, frequent urination, nighttime urination, blood in the urine, or pelvic discomfort, it is advisable to consult a urology doctor in Bangalore for evaluation and appropriate treatment." },
+      { q: "Does a Uro-Andrologist Specialist in Bangalore treat male infertility?", a: "Yes. A Uro-Andrologist Specialist in Bangalore evaluates and treats various causes of male infertility, including low sperm count, poor sperm motility, hormonal imbalances, varicocele, and obstructive conditions affecting fertility." },
+      { q: "What diagnostic tests may a urology specialist recommend?", a: "A urology specialist in Bangalore may recommend urine analysis, blood tests, ultrasound scans, CT scans, uroflowmetry, cystoscopy, PSA testing, or semen analysis, depending on your symptoms and medical condition." },
+      { q: "When should I seek immediate medical attention from a urology specialist?", a: "You should seek immediate medical attention if you experience severe kidney stone pain, inability to pass urine, blood in the urine, high fever with urinary symptoms, severe testicular pain, or sudden swelling. Prompt evaluation by a urology specialist in Bangalore can help prevent serious complications." },
+    ],
   },
   {
     slug: "dr-amit-kamat",

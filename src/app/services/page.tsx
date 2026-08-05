@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { serviceCategories, getServicesByCategory } from "@/data/services";
 import { pageMetadata } from "@/lib/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = pageMetadata({
   title: "Best Uro-Andrology & Fertility Services in Bangalore - Joshi Andrology & Urology Centre",
@@ -63,6 +64,16 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+      <div className="border-b border-gray-100">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Services", href: "/services/" },
+          ]}
+        />
+      </div>
 
       {/* Sections by category */}
       {serviceCategories.map((cat, idx) => {

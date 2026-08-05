@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
+    "postbuild": "node scripts/copy-production-files.js",
     "start": "next start -H 0.0.0.0",
     "serve": "npx serve out -l tcp://0.0.0.0:8080",
     "lint": "eslint"

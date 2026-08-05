@@ -270,34 +270,47 @@ export const services: Service[] = [
     category: "Urology",
     title: "Kidney Stone Treatment in Bangalore",
     shortDescription:
-      "Full-spectrum stone care — ESWL, ureteroscopy, RIRS, and PCNL — plus metabolic evaluation to prevent recurrence. Calcium oxalate, struvite, uric acid, and cystine stones all managed onsite.",
+      "Comprehensive evaluation and kidney stone treatment in Bangalore at Joshi Andrology & Urology Centre — advanced diagnostics and minimally invasive procedures (URS, RIRS, PCNL, and laser) tailored to the stone's size, location, and composition.",
     longDescription: [
-      "Kidney stones range from gravel-like crystals to large staghorn formations and are one of the most common urological problems. The most frequent type is calcium oxalate (60–80% of stones), followed by struvite, uric acid, and cystine. Untreated stones can cause severe pain, infection, and lasting kidney damage.",
-      "Diagnosis combines blood and urine tests, ultrasound, and a non-contrast CT KUB scan — the gold-standard investigation when ultrasound doesn't show enough detail. We offer the full range of stone treatments under one roof and pair them with a metabolic workup to identify why stones form and prevent recurrence.",
+      "Kidney stones are one of the most common urological conditions, affecting people of all ages. They develop when minerals and salts in the urine crystallise and form hard deposits inside the kidneys. While some small stones may pass naturally, larger stones can cause severe pain, urinary obstruction, infections, and kidney damage if left untreated. Early diagnosis and appropriate treatment are essential to prevent complications and preserve kidney health.",
+      "At Joshi Andrology & Urology Centre, we provide comprehensive evaluation and kidney stone treatment in Bangalore using advanced diagnostic techniques and minimally invasive procedures. Our goal is to identify the underlying cause of kidney stones and recommend the most suitable treatment based on the stone's size, location, and composition.",
+      "A thorough diagnosis helps determine the size, location, and type of kidney stone. Investigations may include urine analysis, blood tests, ultrasound scan, CT KUB scan, X-ray (when required), and stone analysis after removal.",
+      "If you are experiencing symptoms of kidney stones or recurrent stone formation, early consultation with a qualified kidney stone specialist in Bangalore can help protect your kidney health and improve your quality of life.",
     ],
     symptoms: [
-      "Sudden severe pain radiating from the loin to the groin (or down to the testis, scrotum, labia, or front of thigh)",
-      "Blood in urine",
-      "Painful or burning urination",
-      "Nausea, vomiting, fever with chills",
-      "Frequent nighttime urination",
+      "Severe pain in the back, side, or lower abdomen",
+      "Blood in the urine (Hematuria)",
+      "Pain or burning sensation while urinating",
+      "Frequent urge to urinate",
+      "Nausea and vomiting",
+      "Fever and chills (if infection is present)",
+      "Difficulty passing urine",
     ],
     treatments: [
-      { name: "Extracorporeal Shockwave Lithotripsy (ESWL)", description: "Non-invasive shockwaves break stones into small fragments that pass naturally." },
-      { name: "Ureteroscopy (URS) with Laser Lithotripsy", description: "Endoscopic stone removal using laser — no incisions, day-care procedure." },
-      { name: "Percutaneous Nephrolithotomy (PCNL)", description: "Keyhole surgery for large or complex kidney stones." },
-      { name: "RIRS (Retrograde Intrarenal Surgery)", description: "Flexible ureteroscope and laser for stones high in the kidney." },
-      { name: "Metabolic Stone Workup", description: "Comprehensive evaluation to identify recurrence risk and prevent future stones." },
+      { name: "URS (Ureteroscopy)", description: "Endoscopic removal of stones in the ureter with no external incisions." },
+      { name: "RIRS (Retrograde Intrarenal Surgery)", description: "Flexible ureteroscope and laser to remove kidney stones without external incisions." },
+      { name: "PCNL (Percutaneous Nephrolithotomy)", description: "Minimally invasive removal of large or complex kidney stones through a small incision in the back." },
+      { name: "Laser Kidney Stone Removal", description: "Laser fragmentation for precise, minimally invasive clearance of stones." },
+      { name: "Medical Management for Stone Prevention", description: "Increased fluid intake, medication, and dietary guidance to help small stones pass and prevent recurrence." },
     ],
     whyChooseUs: [
-      "All stone treatments under one roof",
-      "Latest holmium laser lithotripsy",
-      "Day-care endoscopic procedures",
-      "Long-term recurrence prevention plans",
+      "Comprehensive kidney stone care, from diagnosis to treatment and long-term prevention",
+      "Personalised treatment plans",
+      "Advanced urological technology",
+      "Evidence-based care",
+      "Patient education to reduce the risk of stone recurrence",
     ],
     faqs: [
-      { q: "Will I need surgery?", a: "Small stones often pass on their own. Larger or symptomatic stones may need ESWL, URS, or PCNL — we recommend the least invasive option that works." },
-      { q: "Can I prevent future stones?", a: "Yes. With proper hydration, dietary changes, and targeted treatment based on your metabolic workup, recurrence can be significantly reduced." },
+      { q: "What are the common symptoms of kidney stones?", a: "Kidney stones can cause severe pain in the back or side, blood in the urine, painful urination, nausea, vomiting, frequent urination, and difficulty passing urine. Symptoms vary depending on the size and location of the stone." },
+      { q: "When should I consult a kidney stone specialist in Bangalore?", a: "You should consult a kidney stone specialist in Bangalore if you have severe flank pain, blood in the urine, repeated urinary infections, fever with urinary symptoms, or difficulty passing urine. Early diagnosis can help prevent complications." },
+      { q: "What causes kidney stones?", a: "Kidney stones may develop due to dehydration, high salt intake, excessive animal protein consumption, obesity, family history, certain metabolic disorders, or recurrent urinary tract infections." },
+      { q: "How are kidney stones diagnosed?", a: "A kidney stone hospital in Bangalore may recommend urine tests, blood tests, ultrasound, CT KUB scan, X-rays, and stone analysis to determine the size, location, and type of kidney stone." },
+      { q: "Can kidney stones be treated without surgery?", a: "Yes. Small kidney stones often pass naturally with medications, pain management, and adequate hydration. Larger stones may require minimally invasive procedures such as URS, RIRS, PCNL, or laser kidney stone removal." },
+      { q: "What is RIRS and when is it recommended?", a: "RIRS (Retrograde Intrarenal Surgery) is a minimally invasive procedure that uses a flexible ureteroscope and laser to remove kidney stones without making external incisions. It is commonly recommended for small to medium-sized kidney stones." },
+      { q: "What is PCNL surgery?", a: "PCNL (Percutaneous Nephrolithotomy) is a minimally invasive procedure used to remove large or complex kidney stones through a small incision in the back. It is generally recommended when stones cannot be treated with other techniques." },
+      { q: "Can kidney stones come back after treatment?", a: "Yes. Kidney stones can recur if preventive measures are not followed. Drinking plenty of water, maintaining a balanced diet, reducing salt intake, and regular follow-up with a kidney stone specialist can help reduce the risk of recurrence." },
+      { q: "Why choose Joshi Andrology & Urology Centre for kidney stone treatment?", a: "Joshi Andrology & Urology Centre provides comprehensive evaluation, advanced minimally invasive kidney stone procedures, personalised treatment plans, and long-term stone prevention strategies to help patients achieve better kidney health." },
+      { q: "How can I prevent kidney stones?", a: "Staying well hydrated, reducing salt intake, maintaining a healthy diet, limiting excessive animal protein, and following your urologist's recommendations can help lower the risk of kidney stone formation." },
     ],
     icon: "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707",
     accent: "primary",
@@ -308,12 +321,12 @@ export const services: Service[] = [
     category: "Urology",
     title: "Prostate Disorders Treatment in Bangalore",
     shortDescription:
-      "Advanced, personalised care for prostate enlargement (BPH), prostatitis, and prostate-related urinary issues at Joshi's Andrology and Urology Hospital, Sahakara Nagar, Bangalore.",
+      "Advanced, personalised care for prostate enlargement (BPH), prostatitis, and prostate-related urinary issues at Joshi's Andrology and Urology Hospital, Sahakar Nagar, Bangalore.",
     longDescription: [
-      "Prostate disorders are a common health concern among men, especially as they age. Conditions such as prostate enlargement (BPH), prostatitis, and prostate-related urinary issues can affect daily life and overall well-being. At Joshi's Andrology and Urology Hospital in Bangalore (Sahakara Nagar), we offer advanced and personalised care for all types of prostate disorders.",
+      "Prostate disorders are a common health concern among men, especially as they age. Conditions such as prostate enlargement (BPH), prostatitis, and prostate-related urinary issues can affect daily life and overall well-being. At Joshi's Andrology and Urology Hospital in Bangalore (Sahakar Nagar), we offer advanced and personalised care for all types of prostate disorders.",
       "The prostate gland plays a vital role in male reproductive health, but when it becomes enlarged or inflamed it can cause symptoms like frequent urination, weak urine flow, difficulty starting urination, and a feeling of incomplete bladder emptying. In some cases, untreated prostate issues can lead to serious complications.",
       "Our approach focuses on accurate diagnosis and effective treatment. Using modern diagnostic tools and expert evaluation, we identify the root cause and recommend the most suitable treatment plan. Options may include medications, catheter-based management, or advanced surgical procedures such as TURP and laser prostate surgery, depending on the severity of the condition.",
-      "Led by experienced urologists and andrology specialists, the hospital provides comprehensive urology and prostate care under one roof. The centre is known for its patient-focused approach, ethical practices, and use of advanced medical technologies to ensure the best outcomes. Located in Sahakara Nagar, Bangalore, we have successfully treated thousands of patients with various urological conditions, including prostate disorders. Early diagnosis and timely treatment are key to preventing complications — if you are experiencing prostate-related symptoms, book a consultation today.",
+      "Led by experienced urologists and andrology specialists, the hospital provides comprehensive urology and prostate care under one roof. The centre is known for its patient-focused approach, ethical practices, and use of advanced medical technologies to ensure the best outcomes. Located in Sahakar Nagar, Bangalore, we have successfully treated thousands of patients with various urological conditions, including prostate disorders. Early diagnosis and timely treatment are key to preventing complications — if you are experiencing prostate-related symptoms, book a consultation today.",
     ],
     symptoms: [
       "Frequent urination, especially at night",
@@ -336,7 +349,7 @@ export const services: Service[] = [
       "Patient-focused approach with ethical practices",
       "Advanced medical technologies and modern diagnostics",
       "Thousands of urological patients successfully treated",
-      "Convenient Sahakara Nagar, Bangalore location",
+      "Convenient Sahakar Nagar, Bangalore location",
     ],
     faqs: [
       { q: "Do I need surgery for an enlarged prostate?", a: "Not always. Many men do well on medications. Surgery is recommended when symptoms are severe, complications develop, or medications no longer work." },
@@ -833,9 +846,16 @@ export const services: Service[] = [
       "Clinical excellence combined with emotional support",
     ],
     faqs: [
-      { q: "Who is ICSI suitable for?", a: "ICSI is especially beneficial in male infertility, low sperm count, poor sperm motility, abnormal morphology, azoospermia (with surgical sperm retrieval), or previous IVF failures." },
-      { q: "Is ICSI safe?", a: "ICSI has been used safely for over 30 years and is performed with strict laboratory quality standards. We discuss any individual considerations during your consultation." },
-      { q: "How is ICSI different from IVF?", a: "Standard IVF mixes eggs and sperm in the lab and lets fertilisation happen naturally. In ICSI, a single healthy sperm is injected directly into each egg — improving fertilisation when sperm quality is the limiting factor." },
+      { q: "What is ICSI treatment and how does it work?", a: "ICSI (Intracytoplasmic Sperm Injection) is an advanced fertility treatment in which a single healthy sperm is injected directly into a mature egg to achieve fertilisation. It is commonly recommended for couples experiencing male infertility or previous IVF fertilisation failure." },
+      { q: "Who needs ICSI treatment in Bangalore?", a: "ICSI treatment in Bangalore may be recommended for couples with severe male infertility, low sperm count, poor sperm motility, abnormal sperm morphology, obstructive azoospermia, previous failed IVF cycles, or unexplained infertility. A fertility specialist will determine whether ICSI is the most suitable treatment after a detailed evaluation." },
+      { q: "How is ICSI different from IVF?", a: "In conventional IVF treatment, the egg and sperm are combined in a laboratory to allow natural fertilisation. In ICSI, a single sperm is carefully injected into the egg by an embryologist, making it a preferred option for many cases of male factor infertility." },
+      { q: "What conditions can be treated with ICSI?", a: "ICSI specialists commonly recommend this procedure for low sperm count (oligospermia), poor sperm motility, abnormal sperm shape (morphology), azoospermia requiring sperm retrieval (TESA/PESA), previous IVF fertilisation failure, and male infertility associated with genetic or reproductive disorders." },
+      { q: "What services are available at an ICSI clinic in Bangalore?", a: "An ICSI clinic in Bangalore typically provides fertility evaluation, semen analysis, IVF and ICSI procedures, embryo culture, blastocyst transfer, fertility preservation, TESA, PESA, sperm retrieval procedures, and fertility counselling for couples planning pregnancy." },
+      { q: "How long does an ICSI treatment cycle take?", a: "A complete ICSI treatment cycle generally takes about 4 to 6 weeks, including ovarian stimulation, egg retrieval, sperm collection, fertilisation, embryo development, and embryo transfer. The exact timeline depends on the individual's treatment plan." },
+      { q: "What factors influence the success of ICSI treatment?", a: "The success of ICSI treatment in Bangalore depends on several factors, including the woman's age, egg quality, sperm quality, embryo quality, underlying fertility conditions, lifestyle factors, and overall reproductive health." },
+      { q: "Can ICSI help couples with severe male infertility?", a: "Yes. ICSI is one of the most effective assisted reproductive techniques for couples affected by severe male infertility. It is frequently used when sperm count or motility is significantly reduced, or when sperm is obtained through surgical sperm retrieval procedures such as TESA or PESA." },
+      { q: "Why choose Joshi Andrology & Urology Centre for fertility evaluation?", a: "Joshi Andrology & Urology Centre offers comprehensive fertility evaluation for both men and women, including advanced diagnostic testing, male infertility assessment, sperm retrieval procedures, IVF and ICSI guidance, and personalised treatment planning to help couples make informed decisions about their fertility journey." },
+      { q: "When should I consult an ICSI specialist?", a: "You should consult an ICSI specialist in Bangalore if you have been unable to conceive after trying for a year, have been diagnosed with male infertility, experienced repeated IVF failure, or have conditions such as azoospermia, low sperm count, or poor sperm motility. Early evaluation helps identify the most appropriate fertility treatment." },
     ],
     icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
     accent: "gold",
@@ -877,9 +897,16 @@ export const services: Service[] = [
       "Comfortable, supportive environment for every couple",
     ],
     faqs: [
-      { q: "Who is IVF suitable for?", a: "IVF is recommended for couples facing infertility from causes like low sperm count, PCOS, blocked fallopian tubes, unexplained infertility, or after failed IUI cycles." },
-      { q: "Are affordable IVF packages available?", a: "Yes — we offer affordable IVF packages and transparent pricing to make fertility care accessible." },
-      { q: "What other fertility treatments do you offer?", a: "Alongside IVF we provide IUI, male infertility treatment, andrology services, and hormonal evaluation as part of an integrated fertility programme." },
+      { q: "What is IVF treatment and how does it work?", a: "IVF (In Vitro Fertilisation) is an assisted reproductive technology that helps couples conceive. The process involves stimulating the ovaries, retrieving eggs, fertilising them with sperm in a laboratory, and transferring the resulting embryo into the uterus." },
+      { q: "Who should consider IVF treatment in Bangalore?", a: "IVF treatment in Bangalore may be recommended for couples facing infertility due to blocked fallopian tubes, ovulation disorders, male infertility, unexplained infertility, endometriosis, or when other fertility treatments have not been successful." },
+      { q: "How do I choose the best IVF clinic in Bangalore?", a: "When choosing an IVF clinic in Bangalore, consider factors such as the experience of the fertility specialists, laboratory facilities, available fertility treatments, success rates, patient care, transparency in treatment plans, and personalised fertility counselling." },
+      { q: "What services are available at an IVF hospital in Bangalore?", a: "An IVF hospital in Bangalore typically offers fertility evaluation, IVF treatment, IUI, ICSI, fertility preservation, embryo transfer, semen analysis, fertility counselling, and advanced reproductive technologies tailored to individual patient needs." },
+      { q: "How long does an IVF treatment cycle take?", a: "A complete IVF treatment cycle generally takes about 4 to 6 weeks. The duration may vary depending on the patient's fertility condition, ovarian response, and the treatment protocol recommended by the fertility specialist." },
+      { q: "What are the common reasons for IVF treatment?", a: "IVF treatment in Bangalore is commonly recommended for conditions such as female infertility, male infertility, blocked fallopian tubes, low sperm count, ovulation disorders, advanced maternal age, endometriosis, and unexplained infertility." },
+      { q: "What factors affect the success of IVF treatment?", a: "The success of IVF treatment depends on several factors, including the woman's age, egg quality, sperm quality, embryo quality, underlying medical conditions, lifestyle factors, and adherence to the treatment plan recommended by the fertility specialist." },
+      { q: "Is IVF treatment safe?", a: "Yes. IVF treatment is a well-established and widely practised fertility procedure. While every medical treatment carries some risks, IVF is generally considered safe when performed by qualified fertility specialists using appropriate medical protocols." },
+      { q: "What should I expect during my first visit to an IVF hospital in Bangalore?", a: "During your first visit to an IVF hospital in Bangalore, the fertility specialist will review your medical history, discuss previous fertility treatments, recommend necessary investigations, and develop a personalised treatment plan based on your individual needs." },
+      { q: "Why is early fertility evaluation important before IVF treatment?", a: "Early fertility evaluation helps identify the underlying cause of infertility and allows specialists to recommend the most appropriate treatment. In some cases, simpler fertility treatments may be effective before considering IVF treatment in Bangalore, while others may benefit from proceeding directly to IVF based on their diagnosis." },
     ],
     icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
     accent: "gold",
@@ -1369,11 +1396,11 @@ export function getServicesByCategory(category: ServiceCategory): Service[] {
 }
 
 export const serviceCategories: { name: ServiceCategory; accent: "primary" | "secondary" | "accent" | "gold"; description: string; image: string }[] = [
-  { name: "Andrology", accent: "secondary", description: "Male reproductive and sexual health", image: "/services/andrologybanner.webp" },
-  { name: "Urology", accent: "primary", description: "Comprehensive urinary tract care", image: "/services/urologybanner.webp" },
-  { name: "Men's Health", accent: "accent", description: "Holistic wellness for men", image: "/services/menshealthbanner.webp" },
-  { name: "Fertility", accent: "secondary", description: "Complete fertility care for couples", image: "/services/fertilitybanner.webp" },
-  { name: "Additional Services", accent: "gold", description: "Imaging, gynaecology, and supporting care", image: "/services/additionalservicesbanner.webp" },
+  { name: "Andrology", accent: "secondary", description: "Male reproductive and sexual health", image: "/services/andrology-treatment-in-bangalore.webp" },
+  { name: "Urology", accent: "primary", description: "Comprehensive urinary tract care", image: "/services/urology-treatment-in-bangalore.webp" },
+  { name: "Men's Health", accent: "accent", description: "Holistic wellness for men", image: "/services/mens-health.webp" },
+  { name: "Fertility", accent: "secondary", description: "Complete fertility care for couples", image: "/services/fertility-treatment-in-bangalore.webp" },
+  { name: "Additional Services", accent: "gold", description: "Imaging, gynaecology, and supporting care", image: "/services/additional-services.webp" },
 ];
 
 export function getCategoryImage(category: ServiceCategory): string {
@@ -1383,3 +1410,12 @@ export function getCategoryImage(category: ServiceCategory): string {
 export function getServiceImage(service: Service): string {
   return service.image ?? getCategoryImage(service.category);
 }
+
+// Slug of each category's landing page (used for breadcrumbs and internal links).
+export const categorySlug: Record<ServiceCategory, string> = {
+  "Andrology": "andrology-treatment-in-bangalore",
+  "Urology": "urology-treatment-in-bangalore",
+  "Men's Health": "mens-health",
+  "Fertility": "fertility-treatment-in-bangalore",
+  "Additional Services": "additional-services",
+};

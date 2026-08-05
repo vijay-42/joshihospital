@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { doctors, getDoctor, getDoctorSeo } from "@/data/doctors";
 import { pageMetadata } from "@/lib/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 type Params = Promise<{ slug: string }>;
 
@@ -120,6 +121,17 @@ export default async function DoctorDetailPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {/* Breadcrumbs */}
+      <div className="border-b border-gray-100">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Doctors", href: "/doctors/" },
+            { name: doctor.name, href: `/doctors/${slug}/` },
+          ]}
+        />
+      </div>
+
       {/* About */}
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -199,8 +211,32 @@ export default async function DoctorDetailPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {/* FAQs */}
+      {doctor.faqs && doctor.faqs.length > 0 && (
+        <section className="bg-bg-alt py-16 lg:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-text mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              {doctor.faqs.map((f) => (
+                <details key={f.q} className="group bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden">
+                  <summary className="cursor-pointer p-5 flex items-center justify-between font-semibold text-text hover:text-primary transition-colors">
+                    <span>{f.q}</span>
+                    <svg className="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-text-light leading-relaxed border-t border-gray-100 pt-4">
+                    {f.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Other doctors */}
-      <section className="bg-bg-alt py-16 lg:py-20">
+      <section className={`${doctor.faqs?.length ? "" : "bg-bg-alt "}py-16 lg:py-20`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-text mb-8">Other Specialists</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

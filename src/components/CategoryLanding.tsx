@@ -5,7 +5,9 @@ import {
   serviceCategories,
   getServicesByCategory,
   getCategoryImage,
+  categorySlug,
 } from "@/data/services";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const accentMap = {
   primary: { bg: "bg-primary-light", text: "text-primary", border: "border-primary/20", grad: "from-primary to-primary-dark", solid: "bg-primary" },
@@ -22,6 +24,23 @@ const categorySlugs: Record<ServiceCategory, string> = {
   "Additional Services": "additional-services",
 };
 
+const bannerTitles: Record<ServiceCategory, string> = {
+  "Andrology": "Best Andrology Treatment In Bangalore",
+  "Urology": "Best Urology Treatment In Bangalore",
+  "Men's Health": "Best Men's Health Treatment In Bangalore",
+  "Fertility": "Best Fertility Treatment In Bangalore",
+  "Additional Services": "Best Additional Services In Bangalore",
+};
+
+// Heading for the intro section directly under the banner.
+const sectionHeadings: Record<ServiceCategory, string> = {
+  "Andrology": "Andrology Treatment in Bangalore at Joshi's Andrology and Urology Hospital",
+  "Urology": "Urology Treatment in Bangalore – Expert Care at Joshi's Andrology and Urology Hospital",
+  "Men's Health": "Best Men's Health Treatment In Bangalore",
+  "Fertility": "Best Fertility Hospital in Bangalore for Personalised Fertility Care",
+  "Additional Services": "Additional Services in Bangalore – Gynaecology, Radiology & Supporting Care at Joshi's Andrology and Urology Hospital",
+};
+
 // Categories that have a pre-designed full-bleed banner asset
 const bannerCategories = new Set<ServiceCategory>([
   "Andrology",
@@ -31,40 +50,44 @@ const bannerCategories = new Set<ServiceCategory>([
   "Additional Services",
 ]);
 
-// Banners whose artwork has NO baked-in text — we overlay a heading + tagline
-// on the blank left side (matching the navy/purple style of the other banners).
-const bannerOverlay: Partial<
-  Record<ServiceCategory, { line1: string; line2: string; tagline: string }>
-> = {
-  "Urology": {
-    line1: "Urology",
-    line2: "Treatment",
-    tagline: "Expert care for kidney, bladder, prostate and urinary health.",
-  },
-  "Fertility": {
-    line1: "Fertility",
-    line2: "Treatment",
-    tagline: "Complete fertility care for couples — advanced treatments under one roof.",
-  },
-};
+// These banner images already have their headline text baked into the artwork,
+// so we don't overlay any text on top of them.
+const bannerImageHasText = new Set<ServiceCategory>([
+  "Men's Health",
+  "Additional Services",
+]);
+
 
 const categoryDetails: Record<ServiceCategory, {
   tagline: string;
   intro: string[];
   highlights: { title: string; desc: string }[];
+  faqs?: { q: string; a: string }[];
 }> = {
   "Andrology": {
     tagline: "Andrology Treatment in Bangalore — trusted experts in Sahakar Nagar.",
     intro: [
-      "If you are looking for expert andrology treatment in Bangalore, Joshi's Andrology and Urology Hospital is your trusted destination. Recognised as the best andrology hospital in Sahakar Nagar, Bangalore, we specialise in diagnosing and treating a wide range of male health concerns with advanced medical care and personalised attention.",
-      "Our expert team offers complete male reproductive and sexual health treatments under one roof — including male infertility, erectile dysfunction (ED), premature ejaculation, low testosterone, prostate issues, and sexual health disorders. With years of experience and modern technology, we ensure accurate diagnosis and effective treatment plans tailored to each patient.",
-      "We have earned a reputation in Sahakar Nagar by offering compassionate care, advanced treatments, and high success rates. We understand the importance of privacy and ensure a comfortable, judgment-free environment for every patient.",
+      "If you are looking for expert andrology treatment in Bangalore, Joshi's Andrology and Urology Hospital is your trusted destination. Recognised as the best andrology hospital in Sahakar Nagar, we diagnose and treat the full range of male reproductive and sexual health concerns with advanced medical care and personalised, judgment-free attention.",
+      "Under one roof, our team treats male infertility, erectile dysfunction (ED), premature and delayed ejaculation, low testosterone, prostate and urinary problems, varicocele, and other sexual health disorders. Every patient begins with an accurate diagnosis — supported by onsite lab and imaging — followed by a treatment plan tailored to their condition and goals.",
+      "Choosing the right specialist matters most for sensitive concerns. Backed by years of focused experience, modern technology, and high success rates, we combine expert clinical care with complete confidentiality — so you can discuss any concern openly and take the first step towards better health with confidence.",
     ],
     highlights: [
-      { title: "Advanced Diagnostic Facilities", desc: "Precise evaluation with onsite WHO-standard semen analysis, DNA fragmentation, scrotal Doppler, and advanced laboratory services." },
+      { title: "Advanced Diagnostic Facilities", desc: "Precise evaluation with onsite WHO-standard semen analysis, DNA fragmentation, scrotal Doppler, hormonal profiling, and advanced laboratory services." },
       { title: "Experienced Andrologists & Urologists", desc: "Led by Dr. Praveen Joshi with 20+ years of focused expertise — over 10,000 patients treated and 4,000+ surgeries performed." },
-      { title: "Confidential, Patient-Friendly Consultations", desc: "Private consultation rooms and a discreet process designed to make sensitive conversations easier." },
-      { title: "Personalised Treatment Plans", desc: "Tailored care for faster recovery — cutting-edge treatments for male infertility, ED, varicocele, hormonal disorders, and reproductive issues." },
+      { title: "Confidential, Patient-Friendly Consultations", desc: "Private consultation rooms and a discreet, respectful process designed to make sensitive conversations easier." },
+      { title: "Complete Male Health Under One Roof", desc: "Personalised plans for ED and sexual disorders, male infertility, low-testosterone hormonal therapy, prostate and urinary care, and varicocele — for faster recovery and lasting results." },
+    ],
+    faqs: [
+      { q: "What is andrology, and when should I seek andrology treatment in Bangalore?", a: "Andrology treatment in Bangalore focuses on diagnosing and treating male reproductive and sexual health conditions, including erectile dysfunction, male infertility, low testosterone, premature ejaculation, and other men's health concerns. If you experience persistent symptoms affecting your reproductive or sexual health, consulting an andrology specialist is recommended." },
+      { q: "What conditions are treated at an andrology hospital in Bangalore?", a: "An andrology hospital in Bangalore provides diagnosis and treatment for a wide range of conditions, including male infertility, erectile dysfunction (ED), premature ejaculation, delayed ejaculation, Peyronie's disease, low testosterone, varicocele, azoospermia, and other male reproductive health disorders." },
+      { q: "Why should I visit an andrology clinic in Bangalore?", a: "An andrology clinic in Bangalore offers specialised evaluation for men's reproductive and sexual health. Early diagnosis can help identify the underlying cause of symptoms and provide personalised treatment options that support better long-term health and fertility." },
+      { q: "What diagnostic tests are performed before starting andrology treatment?", a: "Before beginning andrology treatment in Bangalore, specialists may recommend a detailed medical history, physical examination, hormone profile, semen analysis, ultrasound scan, and other investigations based on your symptoms and medical condition." },
+      { q: "Does an andrology hospital in Bangalore treat male infertility?", a: "Yes. An andrology hospital in Bangalore evaluates and treats various causes of male infertility, including low sperm count, poor sperm motility, abnormal sperm morphology, hormonal imbalances, varicocele, and obstructive azoospermia. Treatment is tailored to the individual's diagnosis." },
+      { q: "Can an andrology clinic in Bangalore help with erectile dysfunction?", a: "Yes. An andrology clinic in Bangalore provides comprehensive evaluation and treatment for erectile dysfunction. Management may include lifestyle modifications, medications, hormone therapy, counselling, or advanced treatment options depending on the underlying cause." },
+      { q: "What services are available at Joshi Andrology & Urology Centre?", a: "Joshi Andrology & Urology Centre offers comprehensive care for male reproductive health, including andrology treatment, male infertility evaluation, erectile dysfunction management, low testosterone treatment, semen analysis, sperm retrieval procedures, fertility care, and urological services under one roof." },
+      { q: "When should I consult an andrology specialist?", a: "You should consult an andrology specialist if you experience difficulty conceiving, erectile dysfunction, premature ejaculation, low sexual desire, hormonal imbalance, testicular pain, or any persistent symptoms affecting your reproductive or sexual health." },
+      { q: "How can I improve my reproductive and sexual health?", a: "Maintaining a healthy lifestyle, exercising regularly, eating a balanced diet, avoiding smoking and excessive alcohol, managing stress, getting adequate sleep, and seeking timely medical evaluation can help support reproductive and sexual health." },
+      { q: "How do I choose the right andrology clinic in Bangalore?", a: "When choosing an andrology clinic in Bangalore, look for experienced specialists, advanced diagnostic facilities, comprehensive treatment options, patient-focused care, transparent communication, and a clinic that provides personalised treatment plans based on your individual needs." },
     ],
   },
   "Urology": {
@@ -81,6 +104,18 @@ const categoryDetails: Record<ServiceCategory, {
       { title: "Patient-Focused & Confidential Care", desc: "Personalised treatment plans, private consultation rooms, and a supportive environment from diagnosis through recovery." },
       { title: "Convenient Sahakar Nagar Location", desc: "Easily accessible Bangalore location — a trusted name for the best urology treatment in the city." },
     ],
+    faqs: [
+      { q: "When should I visit a urology clinic in Bangalore?", a: "You should visit a urology clinic in Bangalore if you experience symptoms such as kidney stone pain, blood in the urine, difficulty urinating, frequent urinary tract infections, prostate problems, urinary incontinence, or bladder-related concerns. Early diagnosis can help prevent complications and improve treatment outcomes." },
+      { q: "What conditions are treated at Joshi Andrology & Urology Centre?", a: "Joshi Andrology & Urology Centre provides evaluation and treatment for a wide range of urological and andrological conditions, including kidney stones, enlarged prostate (BPH), urinary tract infections (UTIs), bladder disorders, urological cancers, male infertility, erectile dysfunction, and other men's health concerns." },
+      { q: "What services are available at a urology hospital in Bangalore?", a: "A urology hospital in Bangalore typically offers comprehensive diagnostic and treatment services, including kidney stone management, laser prostate surgery, endoscopic urological procedures, reconstructive urology, bladder care, and treatment for urinary tract disorders." },
+      { q: "Why should I consult urology specialists in Sahakar Nagar?", a: "Urology specialists in Sahakar Nagar provide expert evaluation for urinary and reproductive health conditions. They help diagnose the underlying cause of symptoms and recommend personalised treatment plans using advanced diagnostic techniques and minimally invasive procedures whenever appropriate." },
+      { q: "What are the common signs that require urology treatment in Bangalore?", a: "You may need urology treatment in Bangalore if you have persistent urinary symptoms, severe kidney stone pain, difficulty passing urine, recurrent urinary tract infections, blood in the urine, prostate enlargement, or unexplained pelvic discomfort." },
+      { q: "Can kidney stones be treated without open surgery?", a: "Yes. Many kidney stones can be treated using minimally invasive procedures such as URS (Ureteroscopy), RIRS (Retrograde Intrarenal Surgery), and PCNL (Percutaneous Nephrolithotomy). The most appropriate treatment depends on the size, location, and type of the stone." },
+      { q: "What should I expect during my first consultation at a urology clinic in Bangalore?", a: "During your first visit to a urology clinic in Bangalore, the specialist will review your medical history, discuss your symptoms, perform a physical examination if required, and recommend diagnostic tests such as urine analysis, blood tests, ultrasound, or CT scans to determine the cause of your condition." },
+      { q: "How do I know if I need treatment for an enlarged prostate?", a: "Common symptoms of an enlarged prostate include frequent urination, weak urine flow, difficulty starting urination, waking up multiple times at night to urinate, and a feeling of incomplete bladder emptying. A urology specialist can evaluate these symptoms and recommend appropriate treatment." },
+      { q: "What are the benefits of early urology treatment?", a: "Seeking urology treatment in Bangalore at an early stage can help identify conditions before they become more serious, reduce the risk of complications, improve treatment outcomes, and support long-term urinary and reproductive health." },
+      { q: "How do I choose the right urology hospital in Bangalore?", a: "When selecting a urology hospital in Bangalore, consider factors such as the experience of the specialists, availability of advanced diagnostic and surgical facilities, minimally invasive treatment options, personalised patient care, and comprehensive management for both urological and andrological conditions." },
+    ],
   },
   "Men's Health": {
     tagline: "Holistic wellness for the modern man.",
@@ -95,17 +130,30 @@ const categoryDetails: Record<ServiceCategory, {
     ],
   },
   "Fertility": {
-    tagline: "Complete fertility care for couples — advanced treatments under one roof.",
+    tagline: "Personalised fertility care for couples — advanced treatments under one roof.",
     intro: [
-      "Starting a family can be challenging, but you don't have to face it alone. At Joshi's Andrology and Urology Hospital in Sahakar Nagar, Bangalore, our dedicated fertility programme brings together male and female reproductive care, advanced laboratory diagnostics, and assisted reproduction — all in one place.",
-      "From your first evaluation to advanced treatments like IUI, IVF, and ICSI, our experienced consultants design a personalised plan based on the underlying cause. With onsite WHO-standard semen analysis, surgical sperm retrieval (TESA, PESA), and coordinated female fertility care, couples receive seamless, confidential support throughout their journey.",
-      "We understand how emotional and personal this journey is. Our team offers compassionate, judgment-free care with clear guidance at every step — helping you make informed decisions and giving you the best possible chance of a successful pregnancy.",
+      "Starting a family is a cherished dream, but difficulties in conceiving can bring emotional stress and uncertainty. At Joshi's Andrology and Urology Centre in Sahakar Nagar, Bangalore, our dedicated fertility programme helps couples identify the underlying causes of infertility and receive effective, personalised care — bringing male and female reproductive care, advanced laboratory diagnostics, and assisted reproduction together in one place.",
+      "Recognised as one of the leading fertility clinics in Bangalore, we begin every fertility journey with a thorough assessment of both partners. Fertility challenges can arise from male factors, female factors, hormonal imbalances, lifestyle habits, age-related issues, or unexplained infertility — and based on the findings, our experienced consultants recommend the most suitable plan, from IUI and IVF to ICSI, to maximise the chance of a successful pregnancy.",
+      "Early evaluation makes a real difference. Consider seeing a specialist if you've been trying to conceive for over 12 months (or over 6 months if the woman is above 35), have irregular menstrual cycles, known reproductive conditions, repeated miscarriages, hormonal disorders, or male-factor concerns such as low sperm count, poor motility, or erectile dysfunction.",
+      "We understand how emotional and personal this journey is. Our team offers compassionate, judgment-free care with clear guidance and complete cost transparency at every step — because each case is unique, we discuss the most suitable options and estimated costs during your consultation, so you can make informed decisions with confidence.",
     ],
     highlights: [
-      { title: "Integrated Couples Care", desc: "Male and female fertility evaluation and treatment together — IUI, IVF, and ICSI under one roof." },
-      { title: "Onsite Advanced Andrology Lab", desc: "WHO 2021 semen analysis, DNA fragmentation testing, and surgical sperm retrieval (TESA, PESA) on site." },
-      { title: "Experienced Fertility Specialists", desc: "Led by experienced consultants with high success rates and modern assisted-reproduction technology." },
-      { title: "Confidential, Compassionate Support", desc: "Private consultations and personalised plans in a supportive, judgment-free environment." },
+      { title: "Accurate Diagnosis for Both Partners", desc: "Advanced fertility testing — onsite WHO 2021 semen analysis, DNA fragmentation, and surgical sperm retrieval (TESA, PESA) — pinpoints the root cause for targeted treatment." },
+      { title: "Personalised Treatment Plans", desc: "Every patient is unique. IUI, IVF, and ICSI protocols are tailored to individual health, diagnosis, and fertility goals for the best chance of conception." },
+      { title: "Comprehensive Care, Under One Roof", desc: "Integrated male and female fertility care with complete support from diagnosis through treatment and follow-up — no coordinating across hospitals." },
+      { title: "Ethical, Transparent & Compassionate", desc: "Experienced specialists, evidence-based care, and honest cost guidance in a private, supportive, judgment-free environment." },
+    ],
+    faqs: [
+      { q: "What is fertility treatment and who may need it?", a: "Fertility treatment in Bangalore is recommended for couples who have been unable to conceive after 12 months of regular, unprotected intercourse (or after 6 months if the woman is over 35). Treatment depends on the underlying cause and may include medication, IUI, IVF, ICSI, or other advanced fertility procedures." },
+      { q: "How do I choose a fertility clinic in Bangalore?", a: "When selecting a fertility clinic in Bangalore, consider the qualifications of the fertility specialists, available diagnostic facilities, treatment options, laboratory standards, patient support, and personalised care offered throughout the fertility journey." },
+      { q: "What services are available at a fertility hospital in Bangalore?", a: "A fertility hospital in Bangalore typically provides comprehensive fertility evaluation, male and female infertility treatment, ovulation assessment, semen analysis, IUI, IVF, ICSI, fertility preservation, and counselling to help couples achieve a successful pregnancy." },
+      { q: "When should I visit a fertility specialist?", a: "You should consider consulting a fertility specialist if pregnancy has not occurred after one year of trying, if you have irregular menstrual cycles, recurrent pregnancy loss, known reproductive health conditions, or concerns about male fertility." },
+      { q: "What tests are performed before starting fertility treatment?", a: "Before beginning fertility treatment in Bangalore, doctors may recommend hormone tests, ultrasound scans, ovarian reserve testing, semen analysis, ovulation monitoring, and other investigations to identify the cause of infertility and develop an appropriate treatment plan." },
+      { q: "Can male infertility also affect pregnancy?", a: "Yes. Male factors contribute to nearly half of infertility cases. A fertility clinic in Bangalore usually evaluates both partners to identify issues such as low sperm count, poor sperm motility, hormonal imbalance, or other reproductive conditions that may affect conception." },
+      { q: "What fertility treatments are commonly available?", a: "Depending on the diagnosis, fertility treatment in Bangalore may include lifestyle modifications, fertility medications, ovulation induction, intrauterine insemination (IUI), in vitro fertilisation (IVF), intracytoplasmic sperm injection (ICSI), and surgical sperm retrieval procedures." },
+      { q: "How long does fertility treatment take?", a: "The duration of fertility treatment varies based on the individual's condition and the recommended procedure. Some treatments may take a few weeks, while advanced treatments such as IVF may require several weeks for one treatment cycle." },
+      { q: "How can I improve my chances of successful fertility treatment?", a: "Maintaining a healthy weight, eating a balanced diet, exercising regularly, avoiding smoking and excessive alcohol, managing stress, and following your fertility specialist's advice can help improve reproductive health and treatment outcomes." },
+      { q: "Why is early fertility evaluation important?", a: "Early fertility evaluation helps identify the cause of infertility and allows timely treatment. Visiting a fertility clinic in Bangalore at the right time can help couples explore suitable treatment options and make informed decisions about their reproductive health." },
     ],
   },
   "Additional Services": {
@@ -132,45 +180,42 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
   const otherCategories = serviceCategories.filter((c) => c.name !== category);
   const heroImage = getCategoryImage(category);
 
-  // Categories with a pre-designed banner render it full-bleed; others use the designed gradient hero
+  // Categories with a pre-designed banner render it full-bleed.
   const useFullBanner = bannerCategories.has(category);
-  const overlay = bannerOverlay[category];
+  // Overlay our own headline only when the artwork doesn't already include text.
+  const showBannerText = useFullBanner && !bannerImageHasText.has(category);
 
   return (
     <>
       {useFullBanner ? (
         /* Full-bleed banner image — edge-to-edge, no padding */
         <section className="relative bg-white">
-          <Link
-            href="/services"
-            className="absolute top-4 left-4 z-20 inline-flex items-center gap-2 text-sm bg-white/90 backdrop-blur text-text hover:text-primary px-3 py-1.5 rounded-full shadow-md transition-colors"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            All Services
-          </Link>
           <Image
             src={heroImage}
             alt={`${category} banner`}
-            width={1672}
-            height={941}
+            width={1942}
+            height={809}
             sizes="100vw"
             priority
-            className="block w-full h-auto max-h-[140px] sm:max-h-[180px] lg:max-h-[220px] object-cover object-center"
+            className={`block w-full object-cover object-center ${
+              showBannerText
+                ? "h-[220px] sm:h-[300px] md:h-[380px] lg:h-[420px] xl:h-[460px]"
+                : "h-auto lg:h-[420px] xl:h-[460px]"
+            }`}
           />
-          {/* Text overlay for banners whose artwork has no baked-in heading — laid out horizontally to fit the shorter banner */}
-          {overlay && (
-            <div className="absolute inset-y-0 left-0 z-10 flex items-center pointer-events-none">
-              <div className="pl-5 sm:pl-10 lg:pl-16 xl:pl-24 pr-4 flex items-center gap-3 sm:gap-6 max-w-full">
-                <h1 className="font-bold leading-none tracking-tight whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                  <span className="text-primary">{overlay.line1}</span>{" "}
-                  <span className="text-secondary">{overlay.line2}</span>
-                </h1>
-                <span className="hidden sm:block h-6 md:h-8 w-px bg-gradient-to-b from-primary to-secondary shrink-0" />
-                <p className="hidden sm:block text-text-light leading-snug text-xs md:text-sm lg:text-base max-w-xs">
-                  {overlay.tagline}
-                </p>
+          {showBannerText && (
+            <div className="absolute inset-0 z-10 flex items-center pointer-events-none">
+              {/* Light scrim so the dark headline stays legible over the artwork on small screens */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/45 to-transparent md:hidden" />
+              <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-xl">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-tight tracking-tight">
+                    {bannerTitles[category]}
+                  </h1>
+                  <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-text-light max-w-lg leading-relaxed">
+                    {details.tagline}
+                  </p>
+                </div>
               </div>
             </div>
           )}
@@ -250,20 +295,27 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
       </section>
       )}
 
+      {/* Breadcrumbs */}
+      <div className="border-b border-gray-100">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Services", href: "/services/" },
+            { name: category, href: `/services/${categorySlug[category]}/` },
+          ]}
+        />
+      </div>
+
       {/* Intro / About */}
-      <section className="py-16 lg:py-20">
+      <section className="pt-8 pb-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-bold text-text mb-6">
-              {category === "Andrology" && "Best Andrology Treatment In Bangalore"}
-              {category === "Urology" && "Best Urology Treatment In Bangalore"}
-              {category === "Men's Health" && "Best Men's Health Treatment In Bangalore"}
-              {category === "Fertility" && "Best Fertility Treatment In Bangalore"}
-              {category === "Additional Services" && `About ${category}`}
+            <h2 className="text-base sm:text-2xl lg:text-3xl font-bold text-text mb-6">
+              {sectionHeadings[category]}
             </h2>
             <div className="space-y-5">
               {details.intro.map((p, i) => (
-                <p key={i} className="text-text-light text-base leading-relaxed">{p}</p>
+                <p key={i} className="text-text-light text-base leading-relaxed text-justify">{p}</p>
               ))}
             </div>
           </div>
@@ -357,8 +409,35 @@ export default function CategoryLanding({ category }: { category: ServiceCategor
         </div>
       </section>
 
+      {/* FAQs */}
+      {details.faqs && details.faqs.length > 0 && (
+        <section className="bg-bg-alt py-16 lg:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className={`inline-block ${a.text} font-semibold text-sm uppercase tracking-wider mb-3`}>FAQs</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-text">{category} — Frequently Asked Questions</h2>
+            </div>
+            <div className="space-y-3">
+              {details.faqs.map((f) => (
+                <details key={f.q} className="group bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden">
+                  <summary className="cursor-pointer p-5 flex items-center justify-between font-semibold text-text hover:text-primary transition-colors">
+                    <span>{f.q}</span>
+                    <svg className="w-5 h-5 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-text-light leading-relaxed border-t border-gray-100 pt-4">
+                    {f.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Other Categories */}
-      <section className="bg-bg-alt py-16 lg:py-20">
+      <section className={details.faqs?.length ? "py-16 lg:py-20" : "bg-bg-alt py-16 lg:py-20"}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-text mb-8 text-center">Explore Other Specialties</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

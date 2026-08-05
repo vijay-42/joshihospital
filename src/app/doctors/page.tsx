@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { doctors } from "@/data/doctors";
 import { pageMetadata } from "@/lib/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = pageMetadata({
   title: "Our Doctors | Joshi's Andrology & Urology Centre",
@@ -10,12 +11,6 @@ export const metadata: Metadata = pageMetadata({
     "Meet the multidisciplinary team at Joshi's Andrology & Urology Centre — expert urologists, andrologists, oncologists, fertility specialists, and counselors.",
   path: "/doctors/",
 });
-
-const accentMap = {
-  primary: { bg: "bg-primary-light", text: "text-primary", border: "border-primary/20", grad: "from-primary to-primary-dark" },
-  secondary: { bg: "bg-secondary-light", text: "text-secondary", border: "border-secondary/20", grad: "from-secondary to-primary" },
-  accent: { bg: "bg-accent-light", text: "text-accent", border: "border-accent/20", grad: "from-accent to-primary" },
-} as const;
 
 export default function DoctorsPage() {
   return (
@@ -39,64 +34,54 @@ export default function DoctorsPage() {
         </div>
       </section>
 
-      {/* Doctors Grid */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {doctors.map((doctor) => {
-              const a = accentMap[doctor.accent];
-              return (
-                <Link
-                  key={doctor.slug}
-                  href={`/doctors/${doctor.slug}`}
-                  className={`group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border ${a.border} hover:-translate-y-2`}
-                >
-                  {/* Photo */}
-                  <div className="relative h-72 w-full overflow-hidden bg-gradient-to-br from-primary-light via-white to-secondary-light">
-                    <Image
-                      src={doctor.image}
-                      alt={doctor.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                    <div className={`absolute top-4 left-4 inline-flex items-center gap-1.5 ${a.bg} ${a.text} px-3 py-1.5 rounded-full text-xs font-bold shadow-md`}>
-                      {doctor.category}
-                    </div>
-                    <div className="absolute top-4 right-4 bg-white/95 text-text-light px-3 py-1.5 rounded-full text-xs font-semibold shadow-md">
-                      {doctor.experience}
-                    </div>
-                  </div>
+      {/* Breadcrumbs */}
+      <div className="border-b border-gray-100">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Doctors", href: "/doctors/" },
+          ]}
+        />
+      </div>
 
-                  {/* Body */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-text group-hover:text-primary transition-colors">
-                      {doctor.name}
-                    </h3>
-                    <p className={`text-sm font-medium mt-1 ${a.text}`}>{doctor.title}</p>
-                    <p className="text-sm text-text-light mt-3 leading-relaxed line-clamp-3">{doctor.shortBio}</p>
+      {/* Doctors Grid — horizontal cards (photo left, details right) on a colored band */}
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-secondary to-primary">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+            {doctors.map((doctor) => (
+              <Link
+                key={doctor.slug}
+                href={`/doctors/${doctor.slug}`}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-5 flex gap-5 items-start hover:-translate-y-1"
+              >
+                {/* Photo */}
+                <div className="relative w-28 h-32 sm:w-32 sm:h-36 shrink-0 rounded-xl overflow-hidden bg-bg-alt">
+                  <Image
+                    src={doctor.image}
+                    alt={doctor.name}
+                    fill
+                    sizes="150px"
+                    className="object-cover object-top"
+                  />
+                </div>
 
-                    <div className="flex items-center gap-2 flex-wrap mt-4">
-                      {doctor.qualifications.slice(0, 2).map((q) => (
-                        <span key={q} className="text-[10px] font-semibold px-2 py-1 bg-gold-light text-gold rounded-full border border-gold/20">
-                          {q}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="mt-5 pt-5 border-t border-gray-100 flex items-center justify-between">
-                      <span className="text-sm font-semibold text-primary group-hover:text-secondary transition-colors">
-                        View Profile
-                      </span>
-                      <svg className="w-4 h-4 text-primary group-hover:translate-x-1 group-hover:text-secondary transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+                {/* Details */}
+                <div className="min-w-0 flex-1 pt-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-secondary group-hover:text-primary transition-colors leading-snug">
+                    {doctor.name}
+                  </h3>
+                  <p className="text-xs font-bold uppercase tracking-wide text-text-light mt-1.5">
+                    {doctor.title}
+                  </p>
+                  <p className="text-sm text-text-light mt-2 leading-snug">
+                    {doctor.qualifications.join(", ")}
+                  </p>
+                  <span className="inline-block mt-4 bg-secondary group-hover:bg-primary text-white text-xs font-semibold px-4 py-2.5 rounded-md transition-colors">
+                    More Information
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

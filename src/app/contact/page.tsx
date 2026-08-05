@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact Joshi Andrology & Urology Centre | Book Appointment Bangalore",
@@ -28,6 +29,16 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+      <div className="border-b border-gray-100">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Contact", href: "/contact/" },
+          ]}
+        />
+      </div>
 
       {/* Contact Content */}
       <section className="py-20 lg:py-28">
@@ -209,7 +220,7 @@ export default function ContactPage() {
           <div className="text-center mb-10">
             <span className="inline-block text-secondary font-semibold text-sm uppercase tracking-wider mb-3">Location</span>
             <h2 className="text-3xl font-bold text-text">Find Us</h2>
-            <p className="mt-3 text-text-light">Conveniently located in Sahakara Nagar, Bengaluru</p>
+            <p className="mt-3 text-text-light">Conveniently located in Sahakar Nagar, Bengaluru</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 h-[450px]">
             <iframe

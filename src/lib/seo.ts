@@ -41,7 +41,11 @@ export function pageMetadata({
       title,
       description,
       locale: "en_IN",
-      images: [{ url: ogImage }],
+      images: [
+        hasDedicatedImage
+          ? { url: ogImage, width: 1672, height: 941, alt: title }
+          : { url: ogImage, width: 253, height: 75, alt: SITE_NAME },
+      ],
     },
     twitter: {
       card: hasDedicatedImage ? "summary_large_image" : "summary",

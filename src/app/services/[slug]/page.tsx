@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { services, getService, getServiceSeo, getServicesByCategory, getServiceImage } from "@/data/services";
+import { services, getService, getServiceSeo, getServicesByCategory, getServiceImage, categorySlug } from "@/data/services";
 import { pageMetadata } from "@/lib/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 type Params = Promise<{ slug: string }>;
 
@@ -44,7 +45,7 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
   return (
     <>
       {/* Hero — banner with content overlay on top */}
-      <section className="relative bg-white overflow-hidden flex items-center min-h-[170px] sm:min-h-[190px] md:min-h-[210px] lg:min-h-[230px] xl:min-h-[260px]">
+      <section className="relative bg-white overflow-hidden flex items-center min-h-[180px] sm:min-h-[200px] md:min-h-[240px] lg:min-h-[280px]">
         {/* Background layer: image OR gradient fallback */}
         {hasBannerImage ? (
           <Image
@@ -74,63 +75,50 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
           }`}
         />
 
-        <Link
-          href="/services"
-          className="absolute top-4 left-4 z-30 inline-flex items-center gap-2 text-sm bg-white/95 backdrop-blur text-text hover:text-primary px-3 py-1.5 rounded-full shadow-md transition-colors"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-          </svg>
-          All Services
-        </Link>
-
         {/* Content overlay — two-column grid keeps the title block and description centered on the same axis */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-5 lg:py-6 w-full">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 w-full">
           <div className="grid md:grid-cols-2 items-center gap-x-10 gap-y-2">
-            {/* Badge + title */}
+            {/* Title */}
             <div>
-              <div
-                className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest border mb-2 ${
-                  hasBannerImage
-                    ? `${a.bg} ${a.text} ${a.border}`
-                    : "bg-white/15 backdrop-blur-md text-white border-white/25"
-                }`}
-              >
-                <svg className={`w-3 h-3 ${hasBannerImage ? a.text : "text-gold"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
-                </svg>
-                {service.category}
-              </div>
-
-              <h1
-                className={`text-xl md:text-2xl lg:text-3xl font-bold leading-[1.2] tracking-tight ${
-                  hasBannerImage ? "text-text" : "text-white drop-shadow-lg"
-                }`}
-              >
+              <h1 className={`text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight ${
+                hasBannerImage ? "text-text" : "text-white drop-shadow-lg"
+              }`}>
                 {service.title}
               </h1>
-            </div>
 
-            <p
-              className={`hidden md:block line-clamp-3 text-sm lg:text-base leading-relaxed ${
+              <p className={`mt-3 hidden md:block line-clamp-3 text-sm lg:text-base leading-relaxed ${
                 hasBannerImage ? "text-text-light" : "text-white/90"
-              }`}
-            >
-              {service.shortDescription}
-            </p>
+              }`}>
+                {service.shortDescription}
+              </p>
+            </div>
+ 
+          
           </div>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+      <div className="border-b border-gray-100">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Services", href: "/services/" },
+            { name: service.category, href: `/services/${categorySlug[service.category]}/` },
+            { name: service.title, href: `/services/${slug}/` },
+          ]}
+        />
+      </div>
 
       {/* Overview */}
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold text-text mb-6">Overview</h2>
+              <h2 className="text-3xl font-bold text-text mb-6">{service.title}</h2>
               <div className="space-y-5">
                 {service.longDescription.map((para, i) => (
-                  <p key={i} className="text-text-light leading-relaxed text-base">
+                  <p key={i} className="text-text-light leading-relaxed text-base text-justify">
                     {para}
                   </p>
                 ))}

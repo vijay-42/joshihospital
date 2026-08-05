@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = pageMetadata({
   title: "About Joshi Andrology & Urology Centre | Best Urology Hospital Bangalore",
@@ -89,6 +90,16 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Breadcrumbs */}
+      <div className="border-b border-gray-100">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "About", href: "/about/" },
+          ]}
+        />
+      </div>
 
       {/* Mission & Values */}
       <section className="py-20 lg:py-28">

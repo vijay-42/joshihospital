@@ -387,9 +387,16 @@ export default function Header() {
                     <div className="pl-4 pb-2 space-y-3">
                       {link.megaMenu.map((col) => (
                         <div key={col.title}>
-                          <div className="text-xs font-semibold uppercase tracking-wider text-primary px-4 pt-2 pb-1">
+                          <Link
+                            href={col.href}
+                            onClick={() => {
+                              setMobileOpen(false);
+                              setDropdownOpen(null);
+                            }}
+                            className="block text-xs font-semibold uppercase tracking-wider text-primary px-4 pt-2 pb-1 hover:text-primary-dark"
+                          >
                             {col.title}
-                          </div>
+                          </Link>
                           {col.items.map((sub) => (
                             <Link
                               key={sub.label}
